@@ -1,0 +1,7 @@
+# Playwright CLI output (may contain credentials)
+.playwright-cli/
+
+# Local dependencies and Python cache
+node_modules/
+__pycache__/
+.cache/
