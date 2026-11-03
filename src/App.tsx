@@ -2,14 +2,12 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { BrandIdentity } from "./components/BrandIdentity";
 import { Arrow } from "./components/Arrow";
 import { OpeningSplash } from "./components/OpeningSplash/OpeningSplash";
+import approvedLogo from "./assets/converdive-logo.svg";
 
 const VISIT_KEY = "converdive:intro-seen:v1";
 const mode = new URLSearchParams(window.location.search).get("intro");
 const review = mode === "review";
 const forceIntro = mode === "1" || review;
-// Supply the approved logo image here when its file is available. Both placements
-// then use the same asset. Until then only the supplied stencil wordmark renders.
-const approvedLogo: string | undefined = undefined;
 
 function hasSeenIntro() {
   try {
@@ -56,7 +54,7 @@ export function App() {
       >
         <header className="site-header">
           <a href="./" aria-label="Converdive home">
-            <BrandIdentity logoSrc={approvedLogo} />
+            <BrandIdentity />
           </a>
           <span className="header-positioning">
             For UK Commercial Cleaning Companies

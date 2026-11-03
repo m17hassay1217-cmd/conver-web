@@ -9,25 +9,32 @@ export const OUTCOMES = [
 ] as const;
 
 export const TIMING = {
-  firstPhrase: 700,
+  logo: 120,
+  wordmark: 650,
+  firstPhrase: 1100,
   phraseStagger: 200,
-  phraseEnter: 280,
-  allVisible: 2180,
-  prepare: 2680,
-  attract: 3180,
-  pullStagger: 160,
-  pullDuration: 460,
-  energy: 4600,
-  statement: 5200,
-  slide: 6800,
-  complete: 7900,
+  phraseEnter: 320,
+  allVisible: 2620,
+  prepare: 3120,
+  attract: 3700,
+  pullStagger: 190,
+  pullDuration: 540,
+  converted: 5380,
+  intensify: 5600,
+  rotate: 5980,
+  beam: 6630,
+  statement: 7240,
+  slide: 8700,
+  complete: 9800,
 } as const;
 
 export function phaseAt(time: number) {
   if (time >= TIMING.complete) return "complete";
   if (time >= TIMING.slide) return "handoff";
   if (time >= TIMING.statement) return "positioning";
-  if (time >= TIMING.energy) return "energy";
+  if (time >= TIMING.beam) return "beam";
+  if (time >= TIMING.rotate) return "rotation";
+  if (time >= TIMING.converted) return "conversion";
   if (time >= TIMING.attract) return "attraction";
   if (time >= TIMING.prepare) return "preparing";
   if (time >= TIMING.allVisible) return "reading";
