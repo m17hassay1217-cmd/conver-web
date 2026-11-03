@@ -3,6 +3,12 @@
 Opening splash implementation with React, TypeScript, Vite and CSS/SVG/Web
 Animations. Only a minimal homepage handoff is included.
 
+Private hosted preview: [Play intro](https://converdive-intro-preview.longgala1.chatgpt.site/?intro=1)
+or [pause and scrub](https://converdive-intro-preview.longgala1.chatgpt.site/?intro=review).
+Sign in with the owning ChatGPT account if prompted. These HTTPS links work
+without running the project locally. The localhost addresses below require a
+server running on your own computer.
+
 ```sh
 npm ci
 npm run dev
