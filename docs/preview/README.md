@@ -1,15 +1,23 @@
-# Converdive intro review
+# Converdive V3 intro review
 
-[Play the private preview](https://converdive-intro-preview.longgala1.chatgpt.site/?intro=1) · [Pause and scrub the sequence](https://converdive-intro-preview.longgala1.chatgpt.site/?intro=review)
+[Play the private preview](https://converdive-intro-preview.longgala1.chatgpt.site/?intro=1) · [Pause and scrub](https://converdive-intro-preview.longgala1.chatgpt.site/?intro=review)
 
-Sign in with the owning ChatGPT account if prompted. The hosted preview is the easiest way to review; localhost works only with a server running on your computer.
+Sign in with the owning ChatGPT account if prompted. The approved artwork and homepage handoff are preserved. V3 adds expanded orbital motion, responsive safe areas, luminous magnetic curves, absorption pulses, a beam impact, and sequential For / UK / Cleaning Companies in Cabinet Grotesk Medium.
 
-The [standalone HTML](converdive-intro.html) contains the current intro, assets, CSS, and JavaScript. To serve it locally, run `python3 -m http.server 4173 --directory docs/preview` from the repository root and open `http://localhost:4173/converdive-intro.html?intro=review`.
+| Outcome layout | Outward orbit | Magnetic activation |
+| --- | --- | --- |
+| ![Outcome layout](v3-outcomes.jpg) | ![Orbit](v3-orbit.jpg) | ![Field](v3-magnet.jpg) |
 
-| Outcomes | Magnetic field | Beam | Final state | Mobile |
-| --- | --- | --- | --- | --- |
-| ![Irregular phrase oval](01-outcomes-desktop.jpg) | ![Magnetic activation](02-magnet-desktop.jpg) | ![Energy transfer](03-energy-desktop.jpg) | ![For cleaning companies in the UK](04-positioning-desktop.jpg) | ![Mobile outcome layout](05-outcomes-mobile.jpg) |
+| Absorption | Rotation | Beam impact |
+| --- | --- | --- |
+| ![Absorption](v3-absorption.jpg) | ![Rotation](v3-rotation.jpg) | ![Beam](v3-beam.jpg) |
 
-[Browser check results](checks.json) · [Implementation and asset notes](../opening-splash.md)
+| Final three lines | Mobile layout | Mobile final |
+| --- | --- | --- |
+| ![Final](v3-final.jpg) | ![Mobile](v3-mobile.jpg) | ![Mobile final](v3-mobile-final.jpg) |
 
-Private Sites project: `appgprj_6ae9246de40481918121f5e6f21b7ab6`. Deployed source commit: `858459f91ca92dac1b4a4a9e25d20a292f8dba40`.
+[14 browser checks](checks.json) · [Four viewport geometry results](geometry-checks.json) · [Timing and implementation](../opening-splash.md)
+
+The [standalone HTML](converdive-intro.html) includes the current assets and code. Serve the repository with `npm run dev` and open `http://localhost:5173/?intro=review` for source development. Localhost requires a server running on your own computer.
+
+Private Sites project: `appgprj_6ae9246de40481918121f5e6f21b7ab6`. Deployed source commit: `939b71d05ae07c63cf615a9c5bbdad77dce56f7b`.

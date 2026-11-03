@@ -28,3 +28,46 @@
 @media(max-width:700px){.opening-splash{--core-y:37%;--text-y:53%}.logo-core{width:clamp(150px,45vw,210px);height:clamp(150px,45vw,210px)}.intro-wordmark{font-size:clamp(42px,10vw,70px)}.positioning{font-size:clamp(26px,6vw,36px);max-width:85vw}.magnetic-field{width:95vw;height:95vw}.outcome{font-size:12px}.outcome-label{gap:6px}.outcome-dot{width:3px;height:3px}.outcome-0{left:43%;top:15%}.outcome-1{left:72%;top:24%}.outcome-2{left:76%;top:63%}.outcome-3{left:64%;top:78%}.outcome-4{left:29%;top:83%}.outcome-5{left:23%;top:64%}.outcome-6{left:23%;top:30%}.intro-top,.intro-bottom{left:24px;right:24px}.intro-top{top:22px}.intro-bottom{bottom:20px}.review-controls{width:96%;gap:6px}.review-controls input{width:100px}}
 @media(max-height:500px) and (min-width:600px){.opening-splash{--core-y:35%;--text-y:57%}.logo-core{width:140px;height:140px}.intro-wordmark{font-size:56px}.outcome{font-size:12px}.outcome-0{top:11%}.outcome-4{top:84%}.intro-top{top:12px}.intro-bottom{bottom:8px}}
 @media(prefers-reduced-motion:reduce){.opening-splash{display:none}*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+/* V3: measured orbital choreography and a quieter, more spacious identity. */
+.opening-splash{--core-y:29%;--text-y:44%}
+.logo-core{width:clamp(130px,12vw,184px);height:clamp(130px,12vw,184px)}
+.logo-art{mask-image:none}
+.intro-wordmark{font-size:clamp(50px,5.4vw,88px);letter-spacing:-.035em}
+.positioning{top:48%;opacity:1;display:flex;flex-direction:column;align-items:center;gap:10px;line-height:1.1;font-family:'Cabinet Grotesk',sans-serif;font-weight:500}
+.positioning span{display:block;opacity:0}
+.positioning span:first-child{font-size:clamp(23px,2.1vw,32px);color:#bbced9;letter-spacing:.02em}
+.positioning span:nth-child(2){font-size:clamp(50px,5.1vw,78px);color:#f0f9ff;letter-spacing:-.04em}
+.positioning span:last-child{font-size:clamp(30px,3.5vw,52px);letter-spacing:-.03em;white-space:nowrap}
+.outcome{font-size:clamp(14px,1.2vw,19px);will-change:transform;left:0;top:0}
+.magnetic-field{width:min(58vw,650px);height:min(58vw,650px);box-shadow:none;background:radial-gradient(ellipse,#63e9ff23, #7082f715 32%,#ad57cd0c 55%,transparent 70%)}
+.magnetic-field svg{width:100%;height:100%;overflow:visible;fill:none;stroke:url(#field-spectrum);stroke-width:.7}
+.field-line{transform-origin:center;opacity:.5}
+.field-line:nth-of-type(2n){opacity:.3}
+.field-flow{stroke-width:1.5;stroke-dasharray:25 820;filter:drop-shadow(0 0 3px #84caff);opacity:0}
+.absorption-pulse{position:absolute;inset:-20%;border:1px solid #9be7ff80;border-radius:50%;opacity:0;box-shadow:0 0 24px #797dff40;pointer-events:none}
+.logo-aura{inset:-12%;filter:blur(26px)}
+.energy-beam{width:26px;background:linear-gradient(180deg,#79ebff33,#58d9ff55 30%,#8073ff66 75%,#dd9cff99);filter:drop-shadow(0 0 9px #6e9eff);clip-path:polygon(38% 0,62% 0,88% 100%,12% 100%)}
+.energy-beam:before{content:'';position:absolute;left:calc(50% - 2px);width:4px;height:100%;background:linear-gradient(#c4faff,#f4feff 55%,#d4bdff);box-shadow:0 0 8px #84ddff,0 0 18px #8580ff}
+.energy-beam i{position:absolute;top:0;left:22%;height:100%;width:1px;background:linear-gradient(transparent,#89eeff,#ccabff);transform:rotate(2deg);transform-origin:top}
+.energy-beam i:nth-child(2){left:73%;transform:rotate(-2deg)}.energy-beam i:nth-child(3){left:42%;background:#a6dfff88;transform:rotate(-1deg)}
+.beam-impact{position:absolute;z-index:3;left:50%;top:calc(var(--text-y) + 12px);width:clamp(180px,27vw,380px);height:70px;opacity:0;background:radial-gradient(ellipse,#d1eaff99,#9192ff44 35%,transparent 70%);filter:blur(10px);transform:translateX(-50%)}
+.ambient-waves{stroke-width:.8;stroke:#5a9fb0;mix-blend-mode:screen}
+.ambient-waves path:nth-child(4){stroke:#6367ad;opacity:.5}
+.wave-accent{stroke:#9dddfa;stroke-width:1.2;stroke-dasharray:100 1700;filter:drop-shadow(0 0 5px #6ca6dd)}
+.asphalt{opacity:.55}
+.ambient-energy{background:radial-gradient(ellipse at 20% 64%,#286e8255,transparent 40%),radial-gradient(ellipse at 80% 28%,#63409744,transparent 44%),radial-gradient(ellipse at 68% 80%,#762e6e25,transparent 35%)}
+@media(max-width:700px){
+ .opening-splash{--core-y:29%;--text-y:44%}
+ .logo-core{width:128px;height:128px}
+ .intro-wordmark{font-size:clamp(38px,10.8vw,58px)}
+ .outcome{font-size:12px}
+ .magnetic-field{width:100vw;height:100vw}
+ .positioning{top:49%;gap:12px}
+ .positioning span:first-child{font-size:24px}
+ .positioning span:nth-child(2){font-size:54px}
+ .positioning span:last-child{font-size:clamp(25px,7.2vw,36px)}
+ .review-controls{font-size:10px;padding:6px;gap:4px}
+}
+.field-line{stroke-width:1;opacity:.55}
+.magnetic-field svg{filter:drop-shadow(0 0 3px #6880ed55)}
+.energy-beam{top:var(--beam-start);height:var(--beam-length);z-index:5;clip-path:polygon(30% 0,70% 0,90% 100%,10% 100%)}

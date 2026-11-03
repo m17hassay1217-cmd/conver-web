@@ -1,17 +1,19 @@
 {
-  "checksPassed": 12,
+  "checksPassed": 14,
   "checks": [
     "seven outcomes",
     "irregular oval",
-    "continuous phrase drift",
+    "continuous spiral travel",
     "magnetic field",
     "staggered absorption",
     "logo rotation",
     "energy beam",
     "exact final text",
     "mobile fit",
+    "reduced motion skips intro",
     "Skip Intro",
     "returning visitor",
+    "uninterrupted playback and handoff",
     "no page errors"
   ],
   "errors": []

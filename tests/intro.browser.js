@@ -11,10 +11,10 @@ async (page) => {
   const ys = await page.locator('.outcome').evaluateAll(els => els.map(el => Math.round(el.getBoundingClientRect().y)));
   check(new Set(ys).size === 7, 'irregular oval');
   await page.screenshot({path:'work/intro-outcomes-desktop.jpg', type:'jpeg', quality:85, style:'.review-controls{visibility:hidden}'});
-  const before = await page.locator('.outcome-drift').first().evaluate(el => getComputedStyle(el).transform);
+  const before = await page.locator('.outcome').first().evaluate(el => getComputedStyle(el).transform);
   await page.getByRole('button',{name:'Play', exact:true}).last().click();
   await page.waitForTimeout(300);
-  check(before !== await page.locator('.outcome-drift').first().evaluate(el => getComputedStyle(el).transform), 'continuous phrase drift');
+  check(before !== await page.locator('.outcome').first().evaluate(el => getComputedStyle(el).transform), 'continuous spiral travel');
   await page.getByRole('button',{name:'Magnet', exact:true}).click();
   check(await page.locator('.magnetic-field').evaluate(el => +getComputedStyle(el).opacity) > 0, 'magnetic field');
   await page.screenshot({path:'work/intro-magnet-desktop.jpg', type:'jpeg', quality:85, style:'.review-controls{visibility:hidden}'});
@@ -27,17 +27,24 @@ async (page) => {
   check(await page.locator('.energy-beam').evaluate(el => +getComputedStyle(el).opacity) > 0, 'energy beam');
   await page.screenshot({path:'work/intro-beam-desktop.jpg', type:'jpeg', quality:85, style:'.review-controls{visibility:hidden}'});
   await page.getByRole('button',{name:'Final', exact:true}).click();
-  check(await page.locator('.positioning').textContent() === 'For cleaning companies in the UK', 'exact final text');
+  check(JSON.stringify(await page.locator('.positioning span').allTextContents()) === JSON.stringify(['For','UK','Cleaning Companies']), 'exact final text');
   await page.screenshot({path:'work/intro-final-desktop.jpg', type:'jpeg', quality:85, style:'.review-controls{visibility:hidden}'});
   await page.setViewportSize({width:390,height:844});
   await page.getByRole('button',{name:'Outcomes', exact:true}).click();
   check(await page.evaluate(() => document.documentElement.scrollWidth) <= 390, 'mobile fit');
   await page.screenshot({path:'work/intro-outcomes-mobile.jpg', type:'jpeg', quality:85, style:'.review-controls{visibility:hidden}'});
+  await page.emulateMedia({reducedMotion:'reduce'});
+  await page.goto(base + '?intro=review');
+  check(await page.locator('.opening-splash').count() === 0, 'reduced motion skips intro');
+  await page.emulateMedia({reducedMotion:'no-preference'});
   await page.goto(base + '?intro=1');
   await page.getByRole('button',{name:'Skip Intro'}).click();
   check(await page.locator('.opening-splash').count() === 0, 'Skip Intro');
   await page.goto(base);
   check(await page.locator('.opening-splash').count() === 0, 'returning visitor');
+  await page.goto(base + '?intro=1');
+  await page.locator('.opening-splash').waitFor({state:'detached', timeout:20000});
+  check(await page.locator('.homepage-handoff').isVisible(), 'uninterrupted playback and handoff');
   check(errors.length === 0, 'no page errors');
   return {checksPassed:checks.length,checks,errors};
 }
