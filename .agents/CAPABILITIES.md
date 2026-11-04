@@ -1,14 +1,13 @@
 # Installed website capabilities
 
 Repository: `/workspace/conver-web`; GitHub: `m17hassay1217-cmd/conver-web`.
-Verified 2026-10-24. No website was generated and no paid service was used.
-Original README and source files are unchanged.
+Verified 2026-11-04. No paid service was used during skill installation.
 
 ## Installed files and status
 
 Paths below are relative to `/workspace/conver-web/.agents/skills/`.
-All ten SKILL.md metadata blocks, required supporting files and bundled JSON
-were checked. Nine capabilities contain ten skills because Hairline has two.
+All fourteen SKILL.md metadata blocks, required supporting files and bundled JSON
+were checked. Thirteen capabilities contain fourteen skills because Hairline has two.
 Counts exclude Python caches.
 
 | Capability / folder | Files | Supporting content | Status |
@@ -23,9 +22,16 @@ Counts exclude Python caches.
 | Conversion optimization / `cro` | 4 | References and evaluation examples | Complete instruction bundle; no extra runtime required |
 | Copywriting / `copywriting` | 5 | References and evaluation examples | Complete instruction bundle; no extra runtime required |
 | Awesome Design Reference / `awesome-design-reference` | 91 | 84 DESIGN.md analyses, catalog, deterministic search/show helpers and tests | User-supplied VoltAgent collection; MIT licensed; search and tests pass |
+| Liquid Glass JS / `liquid-glass-js` | 4 | Pinned upstream README, MIT license and provenance | Reference skill; runtime source and dependencies intentionally not installed |
+| React Three Fiber / `react-three-fiber` | 4 | Pinned upstream README, MIT license and provenance | Reference skill; published runtime dependencies installed only when used |
+| ShaderGradient / `shadergradient` | 4 | Pinned upstream README, license statement and provenance | Reference skill; WebGL dependencies intentionally not installed |
+| Liquid Logo / `liquid-logo` | 4 | Pinned upstream README, PolyForm Shield license and provenance | Reference-only skill; upstream application source intentionally not copied |
 
 Exact instruction path for each folder is `<folder>/SKILL.md`.
 Instruction-only skills were checked for completeness, not applied to a website.
+The four visual-technology repositories added on 2026-11-04 were not native
+Agent Skills. Their project-local wrappers pin source documentation and license
+terms without installing runtime packages or copying application source.
 
 ## What belongs in GitHub
 
