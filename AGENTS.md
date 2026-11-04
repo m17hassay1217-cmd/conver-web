@@ -4,8 +4,8 @@ Use the existing checkout; do not create a Git worktree unless explicitly reques
 Preserve existing website code. No website has been built yet; build only when the
 user asks. Do not purchase services as part of setup.
 
-Thirteen selected capabilities are installed project-locally under `.agents/skills/`
-(fourteen skill bundles because Hairline has create and adopt). Read the relevant
+Thirty-one skill bundles are installed project-locally under `.agents/skills/`.
+Read the relevant
 `SKILL.md` and its supporting files when using a capability:
 
 - `ui-ux-pro-max`: design systems and searchable design data.
@@ -22,6 +22,14 @@ Thirteen selected capabilities are installed project-locally under `.agents/skil
 - `react-three-fiber`: React Three.js scene architecture and performance guidance.
 - `shadergradient`: branded animated 3D gradient implementation guidance.
 - `liquid-logo`: reference-only liquid-logo workflow with PolyForm license limits.
+- `brainstorming`, `diagnosing-superpowers`, `dispatching-parallel-agents`,
+  `executing-plans`, `finishing-a-development-branch`, `receiving-code-review`,
+  `requesting-code-review`, `subagent-driven-development`, `systematic-debugging`,
+  `test-driven-development`, `using-git-worktrees`, `using-superpowers`,
+  `verification-before-completion`, `writing-plans`, and `writing-skills`:
+  the complete `obra/superpowers` development-methodology suite.
+- `hallmark`: design direction, page creation, redesign, audit and visual linting.
+- `diagram-design`: branded diagrams, charts, architecture views and exports.
 
 Read `.agents/CAPABILITIES.md` for installation evidence and limitations. Run
 `bash .agents/setup.sh` if dependencies need restoring. From the repository root,

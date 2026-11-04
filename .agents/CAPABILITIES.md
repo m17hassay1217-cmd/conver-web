@@ -6,8 +6,8 @@ Verified 2026-11-04. No paid service was used during skill installation.
 ## Installed files and status
 
 Paths below are relative to `/workspace/conver-web/.agents/skills/`.
-All fourteen SKILL.md metadata blocks, required supporting files and bundled JSON
-were checked. Thirteen capabilities contain fourteen skills because Hairline has two.
+All thirty-one SKILL.md metadata blocks, required supporting files and bundled
+JSON were checked.
 Counts exclude Python caches.
 
 | Capability / folder | Files | Supporting content | Status |
@@ -26,6 +26,9 @@ Counts exclude Python caches.
 | React Three Fiber / `react-three-fiber` | 4 | Pinned upstream README, MIT license and provenance | Reference skill; published runtime dependencies installed only when used |
 | ShaderGradient / `shadergradient` | 4 | Pinned upstream README, license statement and provenance | Reference skill; WebGL dependencies intentionally not installed |
 | Liquid Logo / `liquid-logo` | 4 | Pinned upstream README, PolyForm Shield license and provenance | Reference-only skill; upstream application source intentionally not copied |
+| Superpowers / 15 skill folders | 95 | Complete methodology skills, prompts, scripts, templates, references and MIT license | Native skills from `obra/superpowers` revision `22f0b463e7a5e579904dd6211a520321035526f7`; bundle integrity verified |
+| Hallmark / `hallmark` | 187 | Fifty themes, design references, visual-lint scripts, tests, imagery metadata and MIT license | Native skill from `nutlope/hallmark` revision `de4999e0cd7a7a41df0b4e6903fa02fe9f1492a8`; reference check and five non-browser tests pass; this cloud image cannot launch Chromium through Puppeteer because its SUID sandbox is unavailable |
+| Diagram Design / `diagram-design` | 291 | Diagram references, import/export/self-check scripts, templates and extensive HTML examples | Native skill from `cathrynlavery/diagram-design` revision `f24d98b05e2d7a5e68c2dedfe46e5b7173f50118`; example self-check run during installation |
 
 Exact instruction path for each folder is `<folder>/SKILL.md`.
 Instruction-only skills were checked for completeness, not applied to a website.
@@ -71,6 +74,8 @@ reported in chat after the remote commit is checked.
 ## Dependencies and installer corrections
 
 - `@playwright/cli@0.1.22` is pinned through `package-lock.json`.
+- `puppeteer-core@25.16.0` is pinned for Hallmark browser linting; it uses an
+  existing Chrome/Chromium installation and does not download a browser.
 - CLI path: `/workspace/conver-web/node_modules/@playwright/cli/`.
 - Playwright paths: `/workspace/conver-web/node_modules/playwright/` and
   `/workspace/conver-web/node_modules/playwright-core/`.

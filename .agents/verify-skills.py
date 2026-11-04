@@ -29,6 +29,23 @@ required = {
     "react-three-fiber": ["references/UPSTREAM-README.md", "LICENSE", "NOTICE.md"],
     "shadergradient": ["references/UPSTREAM-README.md", "LICENSE-NOTICE.md", "NOTICE.md"],
     "liquid-logo": ["references/UPSTREAM-README.md", "LICENSE", "NOTICE.md"],
+    "brainstorming": ["visual-companion.md", "scripts/server.cjs", "LICENSE"],
+    "diagnosing-superpowers": ["references/context-safety.md", "templates/report.md", "LICENSE"],
+    "dispatching-parallel-agents": ["LICENSE"],
+    "executing-plans": ["scripts/task-start", "scripts/task-done", "LICENSE"],
+    "finishing-a-development-branch": ["LICENSE"],
+    "receiving-code-review": ["LICENSE"],
+    "requesting-code-review": ["code-reviewer.md", "LICENSE"],
+    "subagent-driven-development": ["scripts/task-brief", "references/preflight.md", "LICENSE"],
+    "systematic-debugging": ["root-cause-tracing.md", "find-polluter.sh", "LICENSE"],
+    "test-driven-development": ["writing-good-tests.md", "LICENSE"],
+    "using-git-worktrees": ["LICENSE"],
+    "using-superpowers": ["references/codex-tools.md", "LICENSE"],
+    "verification-before-completion": ["LICENSE"],
+    "writing-plans": ["LICENSE"],
+    "writing-skills": ["render-graphs.js", "references/bulletproofing.md", "LICENSE"],
+    "hallmark": ["LICENSE", "scripts/theme.mjs", "scripts/refcheck.mjs", "references/themes/README.md"],
+    "diagram-design": ["LICENSE", "scripts/self_check.py", "assets/template.html", "references/style-guide.md"],
 }
 for name, paths in required.items():
     folder = root / name
@@ -44,4 +61,4 @@ for name, paths in required.items():
             json.loads(path.read_text())
     print(f"OK {name}: {len(files)} bundled files")
 assert {p.name for p in root.iterdir() if p.is_dir()} == set(required), "Unexpected skill folder"
-print("All thirteen capabilities / fourteen skill bundles are present. Runtime checks are separate.")
+print("All thirty-one skill bundles are present. Runtime checks are separate.")

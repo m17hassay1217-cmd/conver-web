@@ -1,5 +1,6 @@
 {
   "devDependencies": {
-    "@playwright/cli": "^0.1.22"
+    "@playwright/cli": "^0.1.22",
+    "puppeteer-core": "^25.16.0"
   }
 }
