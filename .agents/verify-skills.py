@@ -25,6 +25,10 @@ required = {
         "LICENSE",
         "NOTICE.md",
     ],
+    "liquid-glass-js": ["references/UPSTREAM-README.md", "LICENSE", "NOTICE.md"],
+    "react-three-fiber": ["references/UPSTREAM-README.md", "LICENSE", "NOTICE.md"],
+    "shadergradient": ["references/UPSTREAM-README.md", "LICENSE-NOTICE.md", "NOTICE.md"],
+    "liquid-logo": ["references/UPSTREAM-README.md", "LICENSE", "NOTICE.md"],
 }
 for name, paths in required.items():
     folder = root / name
@@ -40,4 +44,4 @@ for name, paths in required.items():
             json.loads(path.read_text())
     print(f"OK {name}: {len(files)} bundled files")
 assert {p.name for p in root.iterdir() if p.is_dir()} == set(required), "Unexpected skill folder"
-print("All nine capabilities / ten skill bundles are present. Runtime checks are separate.")
+print("All thirteen capabilities / fourteen skill bundles are present. Runtime checks are separate.")

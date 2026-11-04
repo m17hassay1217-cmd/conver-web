@@ -4,8 +4,8 @@ Use the existing checkout; do not create a Git worktree unless explicitly reques
 Preserve existing website code. No website has been built yet; build only when the
 user asks. Do not purchase services as part of setup.
 
-Nine selected capabilities are installed project-locally under `.agents/skills/`
-(ten skill bundles because Hairline has create and adopt). Read the relevant
+Thirteen selected capabilities are installed project-locally under `.agents/skills/`
+(fourteen skill bundles because Hairline has create and adopt). Read the relevant
 `SKILL.md` and its supporting files when using a capability:
 
 - `ui-ux-pro-max`: design systems and searchable design data.
@@ -18,6 +18,10 @@ Nine selected capabilities are installed project-locally under `.agents/skills/`
 - `copywriting`: marketing writing.
 - `awesome-design-reference`: search and synthesize 84 licensed DESIGN.md
   analyses without copying another brand's identity.
+- `liquid-glass-js`: WebGL refractive glass guidance and pinned upstream API.
+- `react-three-fiber`: React Three.js scene architecture and performance guidance.
+- `shadergradient`: branded animated 3D gradient implementation guidance.
+- `liquid-logo`: reference-only liquid-logo workflow with PolyForm license limits.
 
 Read `.agents/CAPABILITIES.md` for installation evidence and limitations. Run
 `bash .agents/setup.sh` if dependencies need restoring. From the repository root,
