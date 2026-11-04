@@ -1,0 +1,48 @@
+{
+  "checksPassed": 24,
+  "checks": [
+    "all seven phrases readable at 1.5 seconds",
+    "orbital directional travel during playback",
+    "staggered absorption underway at 4.5 seconds",
+    "shared spatial absorption mask",
+    "all seven absorbed before discharge",
+    "90 degree clockwise logo rotation",
+    "beam propagates from origin rather than appearing full length",
+    "beam endpoints follow measured logo and wordmark geometry",
+    "procedural filaments change over time",
+    "deterministic VFX when scrubbing backwards",
+    "wordmark clears before the secondary text",
+    "original company and final text colors preserved exactly",
+    "original typography preserved without color-changing filters",
+    "exact three-line final statement",
+    "energy fully dissipates before exit",
+    "readable orbit and clear name/edges through attraction at 1366x768",
+    "readable orbit and clear name/edges through attraction at 1440x900",
+    "readable orbit and clear name/edges through attraction at 1920x1080",
+    "readable orbit and clear name/edges through attraction at 390x844",
+    "Skip Intro works in review mode",
+    "returning visitor skips automatically",
+    "reduced motion bypasses even forced playback",
+    "uninterrupted full playback reaches existing homepage handoff",
+    "no browser runtime errors"
+  ],
+  "layouts": [
+    [
+      1366,
+      768
+    ],
+    [
+      1440,
+      900
+    ],
+    [
+      1920,
+      1080
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "errors": []
+}

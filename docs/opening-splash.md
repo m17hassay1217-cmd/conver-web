@@ -1,35 +1,16 @@
-# Converdive opening splash
+# Opening splash architecture
 
-Scope: the introduction and a minimal homepage handoff only. Built in React, TypeScript and Vite without Emergent code.
+Scope: Converdive intro only. Existing homepage handoff and approved SVG remain unchanged.
 
-## Review
+- `OpeningSplash.tsx`: asset readiness, single master clock, WAAPI identity/text effects, review controls, resize and cleanup.
+- `timeline.ts`: named durations, dependent absorption/rotation/beam/impact events, 8.2-second sequence and checkpoints.
+- `geometry.ts`: deterministic orbital layout and cubic interpolation.
+- `scene.ts`: measured logo and wordmark coordinates; nearest-first curved flights; wordmark avoidance; nonuniform compression into a shared absorption mask.
+- `energy.ts`: Canvas 2D field planes, traveling arcs, event-driven absorption responses, propagating white-core beam, local impact and dissipation. DPR capped at 1.5; fewer filaments on mobile. Rendering uses master time without another timer or random state.
+- `App.tsx` (unchanged): returning-visit storage, reduced-motion bypass, homepage focus and header boundary.
 
-- Private hosted playback: https://converdive-intro-preview.longgala1.chatgpt.site/?intro=1
-- Private review scrubber: https://converdive-intro-preview.longgala1.chatgpt.site/?intro=review
-- Local development: `npm ci && npm run dev`, then `http://localhost:5173/?intro=review`
-- Production check: `npm run build && npm run test:intro`
+The wordmark stays Bespoke Stencil Medium, RGB 241/241/237. Final lines retain Cabinet Grotesk Medium and RGB 187/206/217, 240/249/255 and 241/241/237. Light renders behind the text; no brightness, hue or text-fill filters are applied.
 
-Localhost only works while the local development server is running on your own computer. The hosted preview works without a local server. Review mode pauses and scrubs without setting the returning-visitor flag.
+Run `npm run build`, then `npm run test:intro` for the Playwright CLI browser suite. Review with `npm run dev` at `http://localhost:5173/?intro=review`. The harness starts its own production server on port 4173 and captures JPEGs under `work/reconstruction/`.
 
-## Timing and implementation
-
-| Stage | Approximate time |
-| --- | --- |
-| Approved logo entrance | 0.12s |
-| Center wordmark entrance | 0.65s |
-| Seven phrases, 200ms apart | 1.10–2.62s |
-| Expanding orbital travel | 1.40–6.60s (continues until each phrase is attracted) |
-| Moving magnetic field builds | 5.40s |
-| Nearest-first curved absorption with pulses | 6.60–8.84s |
-| Concentration and 90° clockwise turn | 8.95–10.05s |
-| Beam arrives at wordmark | 10.10–10.48s |
-| Sequential For / UK / Cleaning Companies | 10.80–11.84s |
-| Upward handoff | 13.20–14.40s |
-
-`OpeningSplash` owns a single seekable animation clock and measured attraction geometry. `App` owns the visit flag, reduced-motion bypass, and future homepage boundary. The animated atmosphere and beam are CSS/SVG. The approved uploaded SVG is cropped to its emblem in the SVG viewBox; the presentation board, embedded wordmark, and swatches are excluded without drawing a replacement logo.
-
-The supplied Bespoke Stencil Medium and Cabinet Grotesk Medium files and Fontsource Space Grotesk Medium are bundled. The V3 final statement specifically uses the supplied Cabinet Grotesk Medium; no font asset is missing for this revision. The asphalt texture is procedural.
-
-The browser suite verifies stage visibility, floating, magnetic field, sequential absorption, rotation, beam, final copy, mobile fit, Skip Intro, returning visits, and no runtime errors. An additional reduced-motion Chromium check passed. The handoff remains a placeholder pending future website work.
-
-V3 geometry lives in `geometry.ts`. The deterministic ellipse expands gradually; dimensions measured after fonts load reserve space around both identity elements and all seven labels. Mobile uses separated upper/lower orbital arcs because full-width phrases cannot pass beside the wordmark legibly. Sampled layouts at 1366×768, 1440×900, 1920×1080, and 390×844 had no clipping or overlaps. `geometry-checks.json` records these checks.
+[Current review evidence, skills and limitations](preview/reconstruction/README.md).

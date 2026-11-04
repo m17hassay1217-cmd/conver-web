@@ -1,0 +1,137 @@
+{
+  "checks": [
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "collisions": [],
+      "tokens": [
+        {
+          "text": "Converdive",
+          "color": "rgb(241, 241, 237)",
+          "font": "\"Bespoke Stencil\", sans-serif",
+          "filter": "none"
+        },
+        {
+          "text": "For",
+          "color": "rgb(187, 206, 217)",
+          "font": "\"Cabinet Grotesk\", sans-serif",
+          "filter": "none"
+        },
+        {
+          "text": "UK",
+          "color": "rgb(240, 249, 255)",
+          "font": "\"Cabinet Grotesk\", sans-serif",
+          "filter": "none"
+        },
+        {
+          "text": "Cleaning Companies",
+          "color": "rgb(241, 241, 237)",
+          "font": "\"Cabinet Grotesk\", sans-serif",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "collisions": [],
+      "tokens": [
+        {
+          "text": "Converdive",
+          "color": "rgb(241, 241, 237)",
+          "font": "\"Bespoke Stencil\", sans-serif",
+          "filter": "none"
+        },
+        {
+          "text": "For",
+          "color": "rgb(187, 206, 217)",
+          "font": "\"Cabinet Grotesk\", sans-serif",
+          "filter": "none"
+        },
+        {
+          "text": "UK",
+          "color": "rgb(240, 249, 255)",
+          "font": "\"Cabinet Grotesk\", sans-serif",
+          "filter": "none"
+        },
+        {
+          "text": "Cleaning Companies",
+          "color": "rgb(241, 241, 237)",
+          "font": "\"Cabinet Grotesk\", sans-serif",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "collisions": [],
+      "tokens": [
+        {
+          "text": "Converdive",
+          "color": "rgb(241, 241, 237)",
+          "font": "\"Bespoke Stencil\", sans-serif",
+          "filter": "none"
+        },
+        {
+          "text": "For",
+          "color": "rgb(187, 206, 217)",
+          "font": "\"Cabinet Grotesk\", sans-serif",
+          "filter": "none"
+        },
+        {
+          "text": "UK",
+          "color": "rgb(240, 249, 255)",
+          "font": "\"Cabinet Grotesk\", sans-serif",
+          "filter": "none"
+        },
+        {
+          "text": "Cleaning Companies",
+          "color": "rgb(241, 241, 237)",
+          "font": "\"Cabinet Grotesk\", sans-serif",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "collisions": [],
+      "tokens": [
+        {
+          "text": "Converdive",
+          "color": "rgb(241, 241, 237)",
+          "font": "\"Bespoke Stencil\", sans-serif",
+          "filter": "none"
+        },
+        {
+          "text": "For",
+          "color": "rgb(187, 206, 217)",
+          "font": "\"Cabinet Grotesk\", sans-serif",
+          "filter": "none"
+        },
+        {
+          "text": "UK",
+          "color": "rgb(240, 249, 255)",
+          "font": "\"Cabinet Grotesk\", sans-serif",
+          "filter": "none"
+        },
+        {
+          "text": "Cleaning Companies",
+          "color": "rgb(241, 241, 237)",
+          "font": "\"Cabinet Grotesk\", sans-serif",
+          "filter": "none"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

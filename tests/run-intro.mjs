@@ -3,7 +3,7 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
-mkdirSync(resolve(root, "work"), { recursive: true });
+mkdirSync(resolve(root, "work/reconstruction"), { recursive: true });
 const env = { ...process.env, XDG_CACHE_HOME: resolve(root, ".cache") };
 const cli = resolve(root, "node_modules/@playwright/cli/playwright-cli.js");
 const session = "-s=converdive-intro-checks";
