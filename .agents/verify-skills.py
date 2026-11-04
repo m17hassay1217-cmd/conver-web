@@ -15,6 +15,16 @@ required = {
     "playwright-cli": ["references/running-code.md", "references/session-management.md"],
     "cro": ["references/experiments.md", "references/form.md"],
     "copywriting": ["references/copy-frameworks.md", "references/ai-tells.md"],
+    "awesome-design-reference": [
+        "scripts/search.py",
+        "scripts/show.py",
+        "tests/test_tools.py",
+        "references/CATALOG.md",
+        "references/design-md/apple/DESIGN.md",
+        "references/design-md/linear.app/DESIGN.md",
+        "LICENSE",
+        "NOTICE.md",
+    ],
 }
 for name, paths in required.items():
     folder = root / name
@@ -30,4 +40,4 @@ for name, paths in required.items():
             json.loads(path.read_text())
     print(f"OK {name}: {len(files)} bundled files")
 assert {p.name for p in root.iterdir() if p.is_dir()} == set(required), "Unexpected skill folder"
-print("All eight capabilities / nine skill bundles are present. Runtime checks are separate.")
+print("All nine capabilities / ten skill bundles are present. Runtime checks are separate.")
