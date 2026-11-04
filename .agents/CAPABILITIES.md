@@ -7,8 +7,8 @@ Original README and source files are unchanged.
 ## Installed files and status
 
 Paths below are relative to `/workspace/conver-web/.agents/skills/`.
-All nine SKILL.md metadata blocks, required supporting files and bundled JSON
-were checked. Eight capabilities contain nine skills because Hairline has two.
+All ten SKILL.md metadata blocks, required supporting files and bundled JSON
+were checked. Nine capabilities contain ten skills because Hairline has two.
 Counts exclude Python caches.
 
 | Capability / folder | Files | Supporting content | Status |
@@ -22,6 +22,7 @@ Counts exclude Python caches.
 | Playwright CLI / `playwright-cli` | 11 | SKILL.md and browser testing reference guides | Real DOM button interaction passed with system Chromium |
 | Conversion optimization / `cro` | 4 | References and evaluation examples | Complete instruction bundle; no extra runtime required |
 | Copywriting / `copywriting` | 5 | References and evaluation examples | Complete instruction bundle; no extra runtime required |
+| Awesome Design Reference / `awesome-design-reference` | 91 | 84 DESIGN.md analyses, catalog, deterministic search/show helpers and tests | User-supplied VoltAgent collection; MIT licensed; search and tests pass |
 
 Exact instruction path for each folder is `<folder>/SKILL.md`.
 Instruction-only skills were checked for completeness, not applied to a website.
