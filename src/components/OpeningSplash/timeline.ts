@@ -6,8 +6,8 @@ export const OUTCOMES = [
 
 /** Milliseconds. Dependencies keep impact, conversion and exit causally ordered. */
 const attract = 3050;
-const pullStagger = 170;
-const pullDuration = 1020;
+const pullStagger = 220;
+const pullDuration = 720;
 const converted = attract + 6 * pullStagger + pullDuration;
 const rotate = converted + 30;
 const beam = rotate + 500;

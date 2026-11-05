@@ -1,0 +1,371 @@
+{
+  "checksPassed": 36,
+  "checksFailed": 0,
+  "checks": [
+    {
+      "name": "exactly seven outcome phrases",
+      "pass": true
+    },
+    {
+      "name": "all seven phrases are visible at 1.5s",
+      "pass": true
+    },
+    {
+      "name": "approved logo asset decodes",
+      "pass": true
+    },
+    {
+      "name": "all three brand font families loaded",
+      "pass": true
+    },
+    {
+      "name": "seek pauses animation deterministically",
+      "pass": true
+    },
+    {
+      "name": "phrases continue drifting during actual playback",
+      "pass": true
+    },
+    {
+      "name": "controlled overlapping absorption at 4.5s",
+      "pass": true,
+      "detail": 4
+    },
+    {
+      "name": "spatial mask present at the absorption source",
+      "pass": true
+    },
+    {
+      "name": "all phrases absorbed before beam release",
+      "pass": true
+    },
+    {
+      "name": "logo rotates exactly 90 degrees clockwise",
+      "pass": true
+    },
+    {
+      "name": "beam progressively reaches the wordmark",
+      "pass": true,
+      "detail": [
+        0.028000000000000004,
+        0.8620740740740741,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "beam endpoints match measured logo and text",
+      "pass": true,
+      "detail": {
+        "from": [
+          720,
+          335.39
+        ],
+        "to": [
+          720,
+          427.16
+        ],
+        "sourceInsideLogo": true,
+        "impactInsideText": true
+      }
+    },
+    {
+      "name": "energy changes over time at the beam checkpoint",
+      "pass": true
+    },
+    {
+      "name": "backward seek reproduces the same rendered frame",
+      "pass": true
+    },
+    {
+      "name": "company wordmark clears before final typography",
+      "pass": true
+    },
+    {
+      "name": "final phrase uses the exact requested three lines",
+      "pass": true
+    },
+    {
+      "name": "incumbent typography colors preserved",
+      "pass": true,
+      "detail": [
+        {
+          "color": "rgb(241, 241, 237)",
+          "font": "\"Bespoke Stencil\", sans-serif",
+          "filter": "none"
+        },
+        {
+          "color": "rgb(187, 206, 217)",
+          "font": "\"Cabinet Grotesk\", sans-serif",
+          "filter": "none"
+        },
+        {
+          "color": "rgb(240, 249, 255)",
+          "font": "\"Cabinet Grotesk\", sans-serif",
+          "filter": "none"
+        },
+        {
+          "color": "rgb(241, 241, 237)",
+          "font": "\"Cabinet Grotesk\", sans-serif",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "name": "incumbent fonts remain without color-changing filters",
+      "pass": true
+    },
+    {
+      "name": "beam and magnetic field fully dissipate before handoff",
+      "pass": true
+    },
+    {
+      "name": "phrase field fits 320×740 through orbit and capture",
+      "pass": true
+    },
+    {
+      "name": "phrase field fits 390×844 through orbit and capture",
+      "pass": true
+    },
+    {
+      "name": "phrase field fits 768×1024 through orbit and capture",
+      "pass": true
+    },
+    {
+      "name": "phrase field fits 844×390 through orbit and capture",
+      "pass": true
+    },
+    {
+      "name": "phrase field fits 1440×900 through orbit and capture",
+      "pass": true
+    },
+    {
+      "name": "rotation/resize recalculates the shared coordinates at a paused timestamp",
+      "pass": true
+    },
+    {
+      "name": "Skip Intro immediately exits review mode",
+      "pass": true
+    },
+    {
+      "name": "Skip Intro hands keyboard focus to main",
+      "pass": true
+    },
+    {
+      "name": "review mode does not mark a real visit as completed",
+      "pass": true
+    },
+    {
+      "name": "Skip Intro works from keyboard",
+      "pass": true
+    },
+    {
+      "name": "returning visitors automatically skip",
+      "pass": true
+    },
+    {
+      "name": "reduced motion directly reveals permanent brand and handoff",
+      "pass": true
+    },
+    {
+      "name": "changing motion preference during playback exits safely",
+      "pass": true
+    },
+    {
+      "name": "uninterrupted playback reaches the existing handoff",
+      "pass": true
+    },
+    {
+      "name": "continuous playback has substantial visual evidence",
+      "pass": true,
+      "detail": 126
+    },
+    {
+      "name": "continuous playback video encoded",
+      "pass": true,
+      "detail": "work/cinematic/playback.webm"
+    },
+    {
+      "name": "no browser runtime exceptions",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "layoutIssues": [],
+  "errors": [],
+  "metrics": [
+    {
+      "viewport": "1440×900",
+      "captureOverhead": false,
+      "samples": 59,
+      "medianMs": 33.29999999999973,
+      "p95Ms": 50,
+      "over50ms": 1
+    },
+    {
+      "viewport": "1440×900",
+      "captureOverhead": true,
+      "samples": 265,
+      "medianMs": 33.30000000000018,
+      "p95Ms": 50,
+      "over50ms": 5
+    }
+  ],
+  "checkpoints": [
+    {
+      "width": 1440,
+      "height": 900,
+      "time": 1500,
+      "path": "/workspace/conver-web/work/cinematic/1440-1500.png",
+      "state": {
+        "phase": "orbit",
+        "absorbed": 0,
+        "beamProgress": 0
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "time": 3500,
+      "path": "/workspace/conver-web/work/cinematic/1440-3500.png",
+      "state": {
+        "phase": "attraction",
+        "absorbed": 0,
+        "beamProgress": 0
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "time": 4500,
+      "path": "/workspace/conver-web/work/cinematic/1440-4500.png",
+      "state": {
+        "phase": "attraction",
+        "absorbed": 4,
+        "beamProgress": 0
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "time": 5400,
+      "path": "/workspace/conver-web/work/cinematic/1440-5400.png",
+      "state": {
+        "phase": "concentration",
+        "absorbed": 7,
+        "beamProgress": 0
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "time": 6000,
+      "path": "/workspace/conver-web/work/cinematic/1440-6000.png",
+      "state": {
+        "phase": "beam",
+        "absorbed": 7,
+        "beamProgress": 1
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "time": 6800,
+      "path": "/workspace/conver-web/work/cinematic/1440-6800.png",
+      "state": {
+        "phase": "positioning",
+        "absorbed": 7,
+        "beamProgress": 1
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "time": 7600,
+      "path": "/workspace/conver-web/work/cinematic/1440-7600.png",
+      "state": {
+        "phase": "resolved",
+        "absorbed": 7,
+        "beamProgress": 1
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "time": 1500,
+      "path": "/workspace/conver-web/work/cinematic/390-1500.png",
+      "state": {
+        "phase": "orbit",
+        "absorbed": 0,
+        "beamProgress": 0
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "time": 3500,
+      "path": "/workspace/conver-web/work/cinematic/390-3500.png",
+      "state": {
+        "phase": "attraction",
+        "absorbed": 0,
+        "beamProgress": 0
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "time": 4500,
+      "path": "/workspace/conver-web/work/cinematic/390-4500.png",
+      "state": {
+        "phase": "attraction",
+        "absorbed": 4,
+        "beamProgress": 0
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "time": 5400,
+      "path": "/workspace/conver-web/work/cinematic/390-5400.png",
+      "state": {
+        "phase": "concentration",
+        "absorbed": 7,
+        "beamProgress": 0
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "time": 6000,
+      "path": "/workspace/conver-web/work/cinematic/390-6000.png",
+      "state": {
+        "phase": "beam",
+        "absorbed": 7,
+        "beamProgress": 1
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "time": 6800,
+      "path": "/workspace/conver-web/work/cinematic/390-6800.png",
+      "state": {
+        "phase": "positioning",
+        "absorbed": 7,
+        "beamProgress": 1
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "time": 7600,
+      "path": "/workspace/conver-web/work/cinematic/390-7600.png",
+      "state": {
+        "phase": "resolved",
+        "absorbed": 7,
+        "beamProgress": 1
+      }
+    }
+  ]
+}

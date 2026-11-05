@@ -32,7 +32,9 @@ export function orbitalLayout(time:number,width:number,height:number,labels:Box[
       const oy=(b.height+labels[i].height)/2+14-Math.abs(dy);
       if(ox>0&&oy>0){
         const canMoveX=p.x+Math.sign(dx||1)*ox>pad+labels[i].width/2&&p.x+Math.sign(dx||1)*ox<width-pad-labels[i].width/2;
-        if(canMoveX&&ox<oy)p.x+=Math.sign(dx||1)*ox;
+        const movedY=p.y+Math.sign(dy||-1)*oy;
+        const canMoveY=movedY>=(short?64:80)&&movedY<=height-(phone?116:74);
+        if(canMoveX&&(!canMoveY||ox<oy))p.x+=Math.sign(dx||1)*ox;
         else p.y+=Math.sign(dy||-1)*oy;
       }
     }

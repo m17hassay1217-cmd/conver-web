@@ -103,6 +103,29 @@ try {
   const typography = await page.locator('.intro-wordmark,.positioning span').evaluateAll(els => els.map(el => ({ color: getComputedStyle(el).color, font: getComputedStyle(el).fontFamily, filter: getComputedStyle(el).filter })));
   check(JSON.stringify(typography.map(v => v.color)) === JSON.stringify(['rgb(241, 241, 237)', 'rgb(187, 206, 217)', 'rgb(240, 249, 255)', 'rgb(241, 241, 237)']), 'incumbent typography colors preserved', typography);
   check(typography[0].font.includes('Bespoke Stencil') && typography.slice(1).every(v => v.font.includes('Cabinet Grotesk') && v.filter === 'none'), 'incumbent fonts remain without color-changing filters');
+  check(await page.locator('.energy-canvas').evaluate(canvas => {
+    const pixels = canvas.getContext('2d').getImageData(0, 0, canvas.width, canvas.height).data;
+    for (let i = 3; i < pixels.length; i += 4) if (pixels[i] !== 0) return false;
+    return true;
+  }), 'beam and magnetic field fully dissipate before handoff');
+
+  await seek(2200);
+  await page.locator('.review-controls').getByRole('button', { name: 'Play', exact: true }).click();
+  const uncaptured = await page.evaluate(() => new Promise(resolve => {
+    const times = [], start = performance.now();
+    let previous;
+    const tick = now => {
+      if (previous) times.push(now - previous);
+      previous = now;
+      if (now - start < 1700) requestAnimationFrame(tick);
+      else resolve(times);
+    };
+    requestAnimationFrame(tick);
+  }));
+  const uncapturedSorted = [...uncaptured].sort((a, b) => a - b);
+  metrics.push({ viewport: '1440×900', captureOverhead: false, samples: uncapturedSorted.length,
+    medianMs: uncapturedSorted[Math.floor(uncapturedSorted.length * .5)], p95Ms: uncapturedSorted[Math.floor(uncapturedSorted.length * .95)],
+    over50ms: uncapturedSorted.filter(v => v > 50).length });
 
   // Test visible label rectangles, not just centers, throughout readable orbit.
   for (const [width, height] of [[320, 740], [390, 844], [768, 1024], [844, 390], [1440, 900]]) {
@@ -111,13 +134,20 @@ try {
       await seek(time);
       const issues = await page.evaluate(time => {
         const rect = el => { const r = el.getBoundingClientRect(); return { x: r.x, y: r.y, w: r.width, h: r.height }; };
-        const labels = [...document.querySelectorAll('.outcome')].filter(el => el.dataset.absorbed !== 'true').map(rect);
+        const elements = [...document.querySelectorAll('.outcome')].filter(el => el.dataset.absorbed !== 'true');
+        const labels = elements.map(rect);
         const word = rect(document.querySelector('.intro-wordmark'));
+        const logo = rect(document.querySelector('.logo-core'));
         const overlap = (a, b) => a.x < b.x + b.w - 1 && a.x + a.w > b.x + 1 && a.y < b.y + b.h - 1 && a.y + a.h > b.y + 1;
         const issues = [];
         labels.forEach((r, i) => {
           if (r.x < -1 || r.x + r.w > innerWidth + 1 || r.y < -1 || r.y + r.h > innerHeight + 1) issues.push(`label ${i} clipped`);
           if (overlap(r, word)) issues.push(`label ${i} overlaps wordmark`);
+          if (time <= 3000 && overlap(r, logo)) issues.push(`label ${i} overlaps logo during readable orbit`);
+          if (time <= 3000) {
+            const m = new DOMMatrix(getComputedStyle(elements[i]).transform);
+            if (Math.hypot(m.a, m.b) < .99 || Math.hypot(m.c, m.d) < .99) issues.push(`label ${i} shrinks before attraction`);
+          }
           if (time <= 3000) labels.forEach((s, j) => { if (j < i && overlap(r, s)) issues.push(`labels ${i}/${j} collide`); });
         });
         if (document.documentElement.scrollWidth > innerWidth) issues.push('horizontal overflow');
@@ -140,6 +170,7 @@ try {
   await page.getByRole('button', { name: 'Skip Intro' }).click();
   check(await page.locator('.opening-splash').count() === 0, 'Skip Intro immediately exits review mode');
   check(await page.locator('main').evaluate(el => document.activeElement === el), 'Skip Intro hands keyboard focus to main');
+  check(await page.evaluate(() => localStorage.getItem('converdive:intro-seen:v1') !== 'true'), 'review mode does not mark a real visit as completed');
   await page.goto(`${base}?intro=1`);
   await page.getByRole('button', { name: 'Skip Intro' }).focus();
   await page.keyboard.press('Enter');
