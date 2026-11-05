@@ -5,3 +5,7 @@
 node_modules/
 __pycache__/
 .cache/
+
+# Generated preview and verification output
+dist/
+work/

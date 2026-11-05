@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Converdive cinematic animation system</title>
+  <style>
+    :root { --paper:#090c12; --ink:#f1f1ed; --muted:#bbced9; --accent:#72cde5; --panel:#111925; --rule:#496071; }
+    * { box-sizing:border-box; }
+    body { margin:0; padding:40px 24px; background:var(--paper); color:var(--ink); font-family:system-ui,sans-serif; }
+    main { width:100%; max-width:1280px; margin:auto; min-width:0; }
+    h1 { font-size:32px; font-weight:500; letter-spacing:-.03em; margin:0 0 16px; }
+    p { max-width:860px; color:var(--muted); line-height:1.6; }
+    .diagram-container { width:100%; overflow-x:auto; margin-top:32px; }
+    svg { width:100%; min-width:1280px; display:block; }
+    .node { fill:var(--panel); stroke:var(--rule); stroke-width:1; }
+    .focal { fill:#10232c; stroke:var(--accent); }
+    .name { fill:var(--ink); font:600 16px system-ui,sans-serif; }
+    .detail { fill:var(--muted); font:12px system-ui,sans-serif; }
+    .link { fill:none; stroke:var(--muted); stroke-width:1.2; marker-end:url(#cinematic-system-arrow); }
+    @media print { body { padding:0; } .diagram-container { overflow-x:visible; } svg { min-width:0; } }
+  </style>
+</head>
+<body>
+<main>
+  <h1>One scene, one clock</h1>
+  <p>Converdive's cinematic splash uses measured geometry and an absolute time to compute one scene state. The phrases, field, beam and DOM identity consume that same state; seeking or resizing reconstructs the frame without replaying event timers.</p>
+  <div class="diagram-container">
+    <svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="cinematic-system-title cinematic-system-desc">
+      <title id="cinematic-system-title">Converdive cinematic animation system</title>
+      <desc id="cinematic-system-desc">Measured geometry and the master clock feed shared scene state, which coordinates phrase absorption, magnetic fields, beam impact and typography before the completion callback.</desc>
+      <defs><marker id="cinematic-system-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#bbced9"/></marker></defs>
+      <rect width="1280" height="720" fill="#090c12"/>
+      <path class="link" d="M260 148 H292 Q300 148 300 156 V196 Q300 204 308 204 H340"/>
+      <path class="link" d="M260 288 H308 Q316 288 316 280 V260 Q316 252 324 252 H340"/>
+      <path class="link" d="M580 188 H608 Q616 188 616 180 V104 Q616 96 624 96 H680"/>
+      <path class="link" d="M580 228 H632 Q640 228 640 236 V244 Q640 252 648 252 H680"/>
+      <path class="link" d="M580 268 H600 Q608 268 608 276 V400 Q608 408 616 408 H680"/>
+      <path class="link" d="M920 96 H1112 Q1120 96 1120 104 V192"/>
+      <path class="link" d="M920 252 H1000"/>
+      <path class="link" d="M920 408 H1112 Q1120 408 1120 400 V320"/>
+      <path class="link" d="M1160 320 V440"/>
+      <rect class="node" x="40" y="100" width="220" height="96" rx="6"/>
+      <text class="name" x="60" y="132">Measured geometry</text>
+      <text class="detail" x="60" y="156">Logo, glyphs, labels, viewport</text>
+      <text class="detail" x="60" y="176">Rebuilt after resize / font load</text>
+      <rect class="node" x="40" y="240" width="220" height="96" rx="6"/>
+      <text class="name" x="60" y="272">Master clock</text>
+      <text class="detail" x="60" y="296">Absolute milliseconds</text>
+      <text class="detail" x="60" y="316">Play, pause, seek, visibility</text>
+      <rect class="node focal" x="340" y="164" width="240" height="128" rx="6"/>
+      <text class="name" x="360" y="196">Shared scene state</text>
+      <text class="detail" x="360" y="220">Phase and flight positions</text>
+      <text class="detail" x="360" y="240">Absorption progress / charge</text>
+      <text class="detail" x="360" y="260">Beam head and impact time</text>
+      <rect class="node" x="680" y="52" width="240" height="88" rx="6"/>
+      <text class="name" x="700" y="84">Phrase trajectories</text>
+      <text class="detail" x="700" y="108">Orbit → capture → masked core</text>
+      <rect class="node" x="680" y="208" width="240" height="88" rx="6"/>
+      <text class="name" x="700" y="240">Magnetic field</text>
+      <text class="detail" x="700" y="264">Ellipses respond to absorption</text>
+      <rect class="node" x="680" y="364" width="240" height="88" rx="6"/>
+      <text class="name" x="700" y="396">Beam and impact</text>
+      <text class="detail" x="700" y="420">Measured endpoints and energy</text>
+      <rect class="node" x="1000" y="192" width="240" height="128" rx="6"/>
+      <text class="name" x="1020" y="224">Coordinated frame</text>
+      <text class="detail" x="1020" y="248">Original logo / DOM typography</text>
+      <text class="detail" x="1020" y="268">Rotation → hit → text reveal</text>
+      <text class="detail" x="1020" y="288">One local coordinate system</text>
+      <rect class="node" x="1000" y="440" width="240" height="80" rx="6"/>
+      <text class="name" x="1020" y="472">Homepage handoff</text>
+      <text class="detail" x="1020" y="496">onComplete: played / skipped</text>
+      <text class="detail" x="40" y="584">Inputs are measured once per layout. Frame updates write transforms, masks and VFX without per-frame React state.</text>
+      <text class="detail" x="40" y="612">Reduced motion and Skip Intro reach the same completion contract. Review mode exposes deterministic checkpoints.</text>
+      <text class="detail" x="40" y="660">Architecture view · 8 nodes · 9 directed dependencies · cyan marks the shared state, not a second animation.</text>
+    </svg>
+  </div>
+  <p>This internal architecture view applies Diagram Design's orthogonal connections, eight-node budget, accessible SVG and local horizontal scroller. It uses the established dark brand colors; system fonts keep this document self-contained. The diagram is documentation only and is not rendered inside the splash.</p>
+</main>
+</body>
+</html>
