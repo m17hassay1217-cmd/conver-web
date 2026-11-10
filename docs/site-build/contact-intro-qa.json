@@ -1,0 +1,10 @@
+{
+  "checks": [
+    "Skip button completes intro",
+    "Returning visitor skips intro",
+    "Valid preview form explicitly confirms nothing was sent",
+    "Voice route opens required call details without fabricated calendar",
+    "No-WebGL fallback retains open-vessel metaphor and hero copy"
+  ],
+  "passed": 5
+}

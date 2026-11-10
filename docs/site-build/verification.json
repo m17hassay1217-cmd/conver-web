@@ -1,0 +1,126 @@
+{
+  "checks": [
+    {
+      "name": "Ten sequential sections",
+      "passed": true
+    },
+    {
+      "name": "All internal links resolve",
+      "passed": true
+    },
+    {
+      "name": "Default additional bookings = 2",
+      "passed": true
+    },
+    {
+      "name": "Default monthly booking value = £24,000",
+      "passed": true
+    },
+    {
+      "name": "Default annualized booking value = £288,000",
+      "passed": true
+    },
+    {
+      "name": "Calculator caps improvement at 100% total",
+      "passed": true
+    },
+    {
+      "name": "Zero enquiries produces zero new bookings",
+      "passed": true
+    },
+    {
+      "name": "Text form opens",
+      "passed": true
+    },
+    {
+      "name": "Email required; invalid email rejected",
+      "passed": true
+    },
+    {
+      "name": "Phone required only for call preference",
+      "passed": true
+    },
+    {
+      "name": "Phone removed for email preference",
+      "passed": true
+    },
+    {
+      "name": "Unconfigured delivery disclosed",
+      "passed": true
+    },
+    {
+      "name": "No fabricated send success",
+      "passed": true
+    },
+    {
+      "name": "No horizontal page overflow at 1440",
+      "passed": true
+    },
+    {
+      "name": "No horizontal page overflow at 1024",
+      "passed": true
+    },
+    {
+      "name": "No horizontal page overflow at 768",
+      "passed": true
+    },
+    {
+      "name": "No horizontal page overflow at 390",
+      "passed": true
+    },
+    {
+      "name": "No horizontal page overflow at 320",
+      "passed": true
+    },
+    {
+      "name": "Mobile navigation opens",
+      "passed": true
+    },
+    {
+      "name": "Mobile navigation closes after selection",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion bypasses intro",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion retains all ten sections",
+      "passed": true
+    },
+    {
+      "name": "Review intro available",
+      "passed": true
+    },
+    {
+      "name": "Intro Escape skip works",
+      "passed": true
+    },
+    {
+      "name": "No runtime or shader errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "shots": [
+    "desktop-01-home.png",
+    "desktop-02-industry.png",
+    "desktop-03-problems.png",
+    "desktop-04-causes.png",
+    "desktop-05-approach.png",
+    "desktop-06-workflows.png",
+    "desktop-07-outcomes.png",
+    "desktop-08-implementation.png",
+    "desktop-09-value.png",
+    "desktop-10-contact.png",
+    "desktop-10-contact-form.png",
+    "mobile-01-home.png",
+    "mobile-causes.png",
+    "mobile-approach.png",
+    "mobile-workflows.png",
+    "mobile-outcomes.png",
+    "mobile-implementation.png",
+    "mobile-value.png",
+    "mobile-contact.png"
+  ]
+}
