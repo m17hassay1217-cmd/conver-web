@@ -1,0 +1,273 @@
+{
+  "base": "http://localhost:4195",
+  "checks": [
+    {
+      "name": "Ten sections retain their approved order",
+      "pass": true
+    },
+    {
+      "name": "All internal anchors resolve",
+      "pass": true
+    },
+    {
+      "name": "Hero contains no call-to-action buttons",
+      "pass": true
+    },
+    {
+      "name": "Optional 3D scene is a separate requested production chunk",
+      "pass": true
+    },
+    {
+      "name": "Scroll advances and reverses the causal surface",
+      "pass": true,
+      "detail": {
+        "first": "Qualification",
+        "last": "Account expansion"
+      }
+    },
+    {
+      "name": "Method scroll reverses after the ending",
+      "pass": true,
+      "detail": {
+        "before": "diagnose",
+        "after": "synthesis"
+      }
+    },
+    {
+      "name": "Calculator default additional bookings",
+      "pass": true
+    },
+    {
+      "name": "Calculator default gross monthly value",
+      "pass": true
+    },
+    {
+      "name": "Calculator caps improvement at 100% total",
+      "pass": true
+    },
+    {
+      "name": "Zero enquiries means zero additional bookings",
+      "pass": true
+    },
+    {
+      "name": "Maximum assumption and native range agree",
+      "pass": true
+    },
+    {
+      "name": "Range supports keyboard and updates numeric assumption",
+      "pass": true
+    },
+    {
+      "name": "Preview contact never claims delivery",
+      "pass": true
+    },
+    {
+      "name": "Privacy uses a real modal",
+      "pass": true
+    },
+    {
+      "name": "Privacy Escape restores invoker focus",
+      "pass": true
+    },
+    {
+      "name": "Closing enquiry returns keyboard focus",
+      "pass": true
+    },
+    {
+      "name": "768x1024: no horizontal overflow at home",
+      "pass": true
+    },
+    {
+      "name": "768x1024: no horizontal overflow at causes",
+      "pass": true
+    },
+    {
+      "name": "768x1024: no horizontal overflow at approach",
+      "pass": true
+    },
+    {
+      "name": "768x1024: no horizontal overflow at workflows",
+      "pass": true
+    },
+    {
+      "name": "768x1024: no horizontal overflow at outcomes",
+      "pass": true
+    },
+    {
+      "name": "768x1024: no horizontal overflow at implementation",
+      "pass": true
+    },
+    {
+      "name": "768x1024: no horizontal overflow at value",
+      "pass": true
+    },
+    {
+      "name": "768x1024: no horizontal overflow at contact",
+      "pass": true
+    },
+    {
+      "name": "375x812: no horizontal overflow at home",
+      "pass": true
+    },
+    {
+      "name": "375x812: no horizontal overflow at causes",
+      "pass": true
+    },
+    {
+      "name": "375x812: no horizontal overflow at approach",
+      "pass": true
+    },
+    {
+      "name": "375x812: no horizontal overflow at workflows",
+      "pass": true
+    },
+    {
+      "name": "375x812: no horizontal overflow at outcomes",
+      "pass": true
+    },
+    {
+      "name": "375x812: no horizontal overflow at implementation",
+      "pass": true
+    },
+    {
+      "name": "375x812: no horizontal overflow at value",
+      "pass": true
+    },
+    {
+      "name": "375x812: no horizontal overflow at contact",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion bypasses intro",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion retains all content",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion uses manual scene navigation",
+      "pass": true
+    },
+    {
+      "name": "Escape skips the intro",
+      "pass": true
+    },
+    {
+      "name": "Returning visitor automatically skips intro",
+      "pass": true
+    },
+    {
+      "name": "Automatic visible intro is bounded below 4.75 seconds",
+      "pass": true,
+      "detail": 4410.800000000745
+    },
+    {
+      "name": "No-WebGL retains the vessel illustration",
+      "pass": true
+    },
+    {
+      "name": "Failed optional 3D chunk retains the still illustration",
+      "pass": true
+    },
+    {
+      "name": "No unexpected browser runtime errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "shots": [],
+  "measurements": [
+    {
+      "id": "industry",
+      "engine": "gsap-scrolltrigger",
+      "progress": "0.021"
+    },
+    {
+      "id": "industry",
+      "engine": "gsap-scrolltrigger",
+      "progress": "0.5"
+    },
+    {
+      "id": "industry",
+      "engine": "gsap-scrolltrigger",
+      "progress": "0.99"
+    },
+    {
+      "id": "problems",
+      "engine": "gsap-scrolltrigger",
+      "progress": "0.02"
+    },
+    {
+      "id": "problems",
+      "engine": "gsap-scrolltrigger",
+      "progress": "0.501"
+    },
+    {
+      "id": "problems",
+      "engine": "gsap-scrolltrigger",
+      "progress": "0.989"
+    },
+    {
+      "id": "causes",
+      "engine": "gsap-scrolltrigger",
+      "progress": "0.02"
+    },
+    {
+      "id": "causes",
+      "engine": "gsap-scrolltrigger",
+      "progress": "0.5"
+    },
+    {
+      "id": "causes",
+      "engine": "gsap-scrolltrigger",
+      "progress": "0.982"
+    },
+    {
+      "id": "approach",
+      "engine": "gsap-scrolltrigger",
+      "progress": "0.02"
+    },
+    {
+      "id": "approach",
+      "engine": "gsap-scrolltrigger",
+      "progress": "0.498"
+    },
+    {
+      "id": "approach",
+      "engine": "gsap-scrolltrigger",
+      "progress": "0.745"
+    },
+    {
+      "id": "outcomes",
+      "engine": "gsap-scrolltrigger",
+      "progress": "0.02"
+    },
+    {
+      "id": "outcomes",
+      "engine": "gsap-scrolltrigger",
+      "progress": "0.501"
+    },
+    {
+      "id": "outcomes",
+      "engine": "gsap-scrolltrigger",
+      "progress": "0.989"
+    },
+    {
+      "id": "implementation",
+      "engine": "gsap-scrolltrigger",
+      "progress": "0.02"
+    },
+    {
+      "id": "implementation",
+      "engine": "gsap-scrolltrigger",
+      "progress": "0.5"
+    },
+    {
+      "id": "implementation",
+      "engine": "gsap-scrolltrigger",
+      "progress": "0.988"
+    }
+  ]
+}

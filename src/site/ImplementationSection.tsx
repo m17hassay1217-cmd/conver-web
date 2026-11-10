@@ -1,7 +1,11 @@
 import { Arrow } from '../components/Arrow';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useLayoutEffect } from 'react';
 import { useSceneProgress } from './motion';
 import './outcomes-implementation.css';
+import { gsap } from './animation';
+import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
+import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+gsap.registerPlugin(DrawSVGPlugin,MotionPathPlugin);
 
 const stages = [
   {
@@ -63,7 +67,7 @@ function WorkflowDiagram({ stage, approved, monitor, testRun }: WorkflowDiagramP
   const present = (minimum: number) => `cv-impl-layer ${stage >= minimum ? 'is-present' : ''}`;
   return (
     <>
-      <svg className="cv-impl-diagram" viewBox="0 0 760 488" role="img" aria-labelledby="cv-implementation-diagram-title cv-implementation-diagram-desc">
+      <svg className="cv-impl-diagram" viewBox="0 0 760 528" role="img" aria-labelledby="cv-implementation-diagram-title cv-implementation-diagram-desc">
         <title id="cv-implementation-diagram-title">Controlled integration with an existing sales workflow</title>
         <desc id="cv-implementation-diagram-desc">Enquiry, Survey, Quote, Approval and Booked Work remain structurally intact. A separate Converdive layer adds selective connections, isolated testing, human approval, authorized fallback and monitoring across the workflow.</desc>
         <defs>
@@ -110,7 +114,7 @@ function WorkflowDiagram({ stage, approved, monitor, testRun }: WorkflowDiagramP
           <text className="cv-impl-svg-small" x="380" y="317" textAnchor="middle">Configured rules</text>
           <text className="cv-impl-svg-small" x="572" y="310">Expected output</text>
           <text className="cv-impl-svg-caption cv-impl-validated" x="572" y="326">✓ Validated</text>
-          {stage === 1 && <circle key={testRun} className="cv-impl-test-signal" cx="192" cy="312" r="3" aria-hidden="true" />}
+          {stage === 1 && <circle key={testRun} className="cv-impl-test-signal" cx="0" cy="0" r="3" aria-hidden="true" />}
         </g>
 
         <g className={`${present(2)} cv-impl-safeguard-group ${approved ? 'is-approved' : 'is-reviewing'}`}>
@@ -125,7 +129,7 @@ function WorkflowDiagram({ stage, approved, monitor, testRun }: WorkflowDiagramP
           <text className="cv-impl-svg-small" x="644" y="427" textAnchor="middle">{approved ? 'Authorized fallback' : 'Fallback on hold'}</text>
         </g>
 
-        <g className={`${present(3)} cv-impl-monitor-overlay`} data-monitor={monitor}>
+        <g className={`${present(3)} cv-impl-monitor-overlay`} transform="translate(0 -16)" data-monitor={monitor}>
           <rect className="cv-impl-monitor-boundary" x="24" y="480" width="712" height="48" rx="5" />
           <circle className="cv-impl-monitor-dot" cx="44" cy="504" r="3" />
           <text className="cv-impl-svg-small" x="58" y="510">Monitoring</text>
@@ -159,20 +163,25 @@ export function ImplementationSection() {
   const stage = stages[index];
 
   useEffect(() => {
-    if (index < 2) { setApproved(false); return; }
-    if (index === 2) {
-      setApproved(staticScene);
-      if (staticScene) return;
-      const approvalTimer = window.setTimeout(() => setApproved(true), 2400);
-      return () => window.clearTimeout(approvalTimer);
-    }
-    setApproved(true);
-    setMonitor(staticScene ? 'resolved' : 'alert');
-    if (staticScene) return;
-    const inspectionTimer = window.setTimeout(() => setMonitor('inspected'), 1100);
-    const resolutionTimer = window.setTimeout(() => setMonitor('resolved'), 2400);
-    return () => { window.clearTimeout(inspectionTimer); window.clearTimeout(resolutionTimer); };
-  }, [index, staticScene]);
+    const sequence=gsap.timeline();
+    if(index<2){setApproved(false);return()=>{sequence.kill()};}
+    if(index===2){setApproved(staticScene);if(!staticScene)sequence.call(()=>setApproved(true),[],2.4);}
+    else {setApproved(true);setMonitor(staticScene?'resolved':'alert');if(!staticScene)sequence.call(()=>setMonitor('inspected'),[],1.1).call(()=>setMonitor('resolved'),[],2.4);}
+    return()=>{sequence.kill()};
+  },[index,staticScene]);
+
+  useLayoutEffect(()=>{
+    if(!ref.current||staticScene)return;
+    const context=gsap.context(()=>{
+      const connections=gsap.utils.toArray<SVGPathElement>('.cv-impl-connections path, .cv-impl-main-links path');
+      if(index===0)gsap.fromTo(connections,{drawSVG:'0%'},{drawSVG:'100%',duration:.85,ease:'power2.inOut',stagger:.06});else gsap.set(connections,{drawSVG:'100%'});
+      if(index===1)gsap.fromTo('.cv-impl-test-path',{drawSVG:'0%'},{drawSVG:'100%',duration:.65,ease:'power2.out'});
+      if(index===2)gsap.fromTo('.cv-impl-review-path',{drawSVG:'0%'},{drawSVG:'100%',duration:.65,ease:'power2.out'});
+      if(index>1)gsap.set('.cv-impl-test-path',{drawSVG:'100%'});if(index>2)gsap.set('.cv-impl-review-path',{drawSVG:'100%'});
+      if(index===1)gsap.to('.cv-impl-test-signal',{duration:1.8,ease:'power2.inOut',motionPath:{path:[{x:192,y:312},{x:380,y:312},{x:552,y:312}],curviness:0}});
+    },ref);
+    return()=>context.revert();
+  },[index,staticScene,testRun]);
 
   const advanceMonitor = () => setMonitor(current => current === 'alert' ? 'inspected' : current === 'inspected' ? 'resolved' : 'alert');
 

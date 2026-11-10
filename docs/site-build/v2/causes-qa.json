@@ -1,0 +1,114 @@
+{
+  "base": "http://localhost:4195/",
+  "checks": [
+    {
+      "name": "Scroll hold centers Qualification",
+      "pass": true
+    },
+    {
+      "name": "Four complete causal levels fit in desktop viewport",
+      "pass": true
+    },
+    {
+      "name": "Manual chain: Qualification",
+      "pass": true
+    },
+    {
+      "name": "All four levels: Qualification",
+      "pass": true
+    },
+    {
+      "name": "Manual chain: Specification integrity",
+      "pass": true
+    },
+    {
+      "name": "All four levels: Specification integrity",
+      "pass": true
+    },
+    {
+      "name": "Manual chain: Proposal progression",
+      "pass": true
+    },
+    {
+      "name": "All four levels: Proposal progression",
+      "pass": true
+    },
+    {
+      "name": "Manual chain: Account expansion",
+      "pass": true
+    },
+    {
+      "name": "All four levels: Account expansion",
+      "pass": true
+    },
+    {
+      "name": "Home selects first chain",
+      "pass": true
+    },
+    {
+      "name": "ArrowLeft selects previous chain",
+      "pass": true
+    },
+    {
+      "name": "ArrowRight selects next chain",
+      "pass": true
+    },
+    {
+      "name": "Reverse scroll restores first chain",
+      "pass": true
+    },
+    {
+      "name": "Inspection dialog contains consequence",
+      "pass": true
+    },
+    {
+      "name": "Inspection starts on close control",
+      "pass": true
+    },
+    {
+      "name": "Native dialog contains keyboard focus",
+      "pass": true
+    },
+    {
+      "name": "Escape closes inspection",
+      "pass": true
+    },
+    {
+      "name": "Inspection restores trigger focus",
+      "pass": true
+    },
+    {
+      "name": "Touch selector changes complete chain",
+      "pass": true
+    },
+    {
+      "name": "Mobile uses normal document flow",
+      "pass": true
+    },
+    {
+      "name": "Mobile has no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "Mobile chain text fits its container",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion keeps manual navigation",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion disables sticky progression",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion reveals all industry reasons",
+      "pass": true
+    },
+    {
+      "name": "No browser runtime errors",
+      "pass": true,
+      "detail": []
+    }
+  ]
+}

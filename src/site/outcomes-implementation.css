@@ -36,8 +36,8 @@
 .cv-outcomes-orbit-number-3 { transform: translate(145px, 170px); color: var(--oi-warm); opacity: 0; }
 .cv-outcomes-orbit-number.is-visible { opacity: 1; }
 .cv-outcomes-list { padding: 24px 0 8px; position: relative; }
-.cv-owner-outcome { margin: 0 0 23px; opacity: .12; transform: translateY(12px); transition: opacity 600ms var(--oi-ease), transform 600ms var(--oi-ease); }
-.cv-owner-outcome.is-revealed { opacity: .72; transform: none; }
+.cv-owner-outcome { margin: 0 0 23px; visibility:hidden; opacity: 0; transform: translateY(12px); transition: opacity 600ms var(--oi-ease), transform 600ms var(--oi-ease); }
+.cv-owner-outcome.is-revealed { visibility:visible; opacity: .85; transform: none; }
 .cv-owner-outcome.is-current { opacity: 1; }
 .cv-owner-outcome-kicker { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; color: var(--oi-muted); font-size: 10px; letter-spacing: .095em; text-transform: uppercase; }
 .cv-owner-outcome-kicker span { color: var(--oi-cyan); font-size: 9px; letter-spacing: .05em; }
@@ -317,3 +317,17 @@
   .cv-implementation-figcaption button,
   .cv-impl-test-signal { display: none; }
 }
+/* V2 compact scroll budgets; the shared ScrollTrigger owns progression. */
+.cv-outcomes{min-height:195svh}.cv-implementation{min-height:300svh}
+.cv-outcomes-pin,.cv-implementation-pin{top:88px;min-height:calc(100svh - 88px)}
+.cv-outcomes-content,.cv-implementation-content{padding-top:30px;padding-bottom:24px}
+.cv-outcomes-header .cv-title{font-size:clamp(36px,4vw,58px)}
+.cv-outcomes-composition{min-height:430px;gap:55px}.cv-outcomes-field{height:430px}
+.cv-owner-outcome p{font-size:16px;line-height:1.6}.cv-owner-outcome-kicker{font-size:12px;letter-spacing:.06em}.cv-owner-outcome-kicker span{font-size:12px}
+.cv-outcomes-orbit-label{font-size:11px}.cv-outcomes-footer p,.cv-outcomes-selectors button{font-size:12px}.cv-outcomes-selectors button{min-width:44px;min-height:44px}
+.cv-implementation-stage-copy .cv-copy{font-size:16px;line-height:1.6}.cv-implementation-step,.cv-implementation-readiness p{font-size:12px}.cv-implementation-figcaption p,.cv-implementation-figcaption button{font-size:12px}.cv-implementation-example-note{font-size:12px}.cv-impl-test-signal{animation:none!important}.cv-impl-diagram{max-height:50svh}.cv-impl-svg-small{font-size:14px!important}.cv-impl-svg-caption{font-size:12px!important}
+@media(min-width:821px) and (max-height:950px){.cv-outcomes-header .cv-title{font-size:46px}.cv-outcomes-composition{min-height:420px}.cv-outcomes-content{padding-top:22px}.cv-owner-outcome{margin-bottom:18px}.cv-owner-outcome-3 h3{font-size:34px}.cv-outcomes-footer{padding-top:12px}.cv-implementation-header .cv-title{font-size:44px}.cv-implementation-question{font-size:24px;margin-bottom:20px;min-height:64px}.cv-implementation-stage-selector{margin-bottom:22px}}
+@media(max-width:820px){.cv-outcomes,.cv-implementation{min-height:0}.cv-outcomes-pin,.cv-implementation-pin{top:auto;min-height:0}.cv-outcomes-content,.cv-implementation-content{padding-top:65px;padding-bottom:55px}.cv-outcomes-header .cv-title{font-size:40px}.cv-outcomes-composition{gap:20px;min-height:0}.cv-outcomes-field{height:360px}.cv-owner-outcome p{font-size:16px}.cv-outcomes-orbit-label{font-size:10px}.cv-implementation-stage-copy .cv-copy{font-size:16px}.cv-impl-mobile-layer{font-size:14px}}
+@media(prefers-reduced-motion:reduce){.cv-outcomes,.cv-implementation{min-height:0}.cv-outcomes-pin,.cv-implementation-pin{top:auto;min-height:0}}
+
+@media(min-width:821px) and (max-height:950px){.cv-site .cv-implementation-header .cv-title{font-size:44px}.cv-site .cv-outcomes-header .cv-title{font-size:46px}.cv-implementation-header{margin-bottom:20px}.cv-implementation-content{padding-top:18px;padding-bottom:12px}.cv-implementation-bottomline{margin-top:12px;padding-top:12px}}

@@ -1,0 +1,108 @@
+{
+  "checks": [
+    {
+      "name": "Hero transfer pauses",
+      "pass": true
+    },
+    {
+      "name": "Hero transfer resumes",
+      "pass": true
+    },
+    {
+      "name": "causes exit reveals its next section",
+      "pass": true
+    },
+    {
+      "name": "approach exit reveals its next section",
+      "pass": true
+    },
+    {
+      "name": "outcomes exit reveals its next section",
+      "pass": true
+    },
+    {
+      "name": "implementation exit reveals its next section",
+      "pass": true
+    },
+    {
+      "name": "Map & Connect: complete composition fits below header",
+      "pass": true,
+      "detail": {
+        "top": 88.859375,
+        "bottom": 899.140625,
+        "height": 810.28125
+      }
+    },
+    {
+      "name": "Configure & Test: complete composition fits below header",
+      "pass": true,
+      "detail": {
+        "top": 88.859375,
+        "bottom": 899.140625,
+        "height": 810.28125
+      }
+    },
+    {
+      "name": "Launch with Safeguards: complete composition fits below header",
+      "pass": true,
+      "detail": {
+        "top": 88.859375,
+        "bottom": 899.140625,
+        "height": 810.28125
+      }
+    },
+    {
+      "name": "Monitor & Maintain: complete composition fits below header",
+      "pass": true,
+      "detail": {
+        "top": 88.859375,
+        "bottom": 899.140625,
+        "height": 810.28125
+      }
+    },
+    {
+      "name": "Invalid phone is focused and linked to its error",
+      "pass": true
+    },
+    {
+      "name": "Runtime motion preference switches scenes to manual",
+      "pass": true
+    },
+    {
+      "name": "Reflow at 200% of a 1440px viewport has no horizontal page overflow",
+      "pass": true
+    },
+    {
+      "name": "No runtime errors in continuity review",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "frames": [
+    {
+      "stage": "Map & Connect",
+      "top": 88.859375,
+      "bottom": 899.140625,
+      "height": 810.28125
+    },
+    {
+      "stage": "Configure & Test",
+      "top": 88.859375,
+      "bottom": 899.140625,
+      "height": 810.28125
+    },
+    {
+      "stage": "Launch with Safeguards",
+      "top": 88.859375,
+      "bottom": 899.140625,
+      "height": 810.28125
+    },
+    {
+      "stage": "Monitor & Maintain",
+      "top": 88.859375,
+      "bottom": 899.140625,
+      "height": 810.28125
+    }
+  ],
+  "errors": []
+}

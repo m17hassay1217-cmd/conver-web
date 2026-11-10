@@ -1,0 +1,49 @@
+{
+  "checks": [
+    {
+      "name": "Paused transfer produces stable rendered pixels",
+      "pass": true
+    },
+    {
+      "name": "Resuming transfer changes rendered pixels",
+      "pass": true
+    },
+    {
+      "name": "Lost WebGL context returns to a complete still",
+      "pass": true
+    },
+    {
+      "name": "768px entry avoids automatic expensive 3D",
+      "pass": true
+    },
+    {
+      "name": "768px playback enables genuine WebGL",
+      "pass": true
+    },
+    {
+      "name": "768px activated scene has no page overflow",
+      "pass": true
+    },
+    {
+      "name": "375px entry avoids automatic expensive 3D",
+      "pass": true
+    },
+    {
+      "name": "375px playback enables genuine WebGL",
+      "pass": true
+    },
+    {
+      "name": "375px activated scene has no page overflow",
+      "pass": true
+    },
+    {
+      "name": "Missing lighting retains the still illustration",
+      "pass": true
+    },
+    {
+      "name": "No unexpected renderer runtime errors",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

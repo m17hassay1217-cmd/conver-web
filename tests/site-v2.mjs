@@ -1,0 +1,48 @@
+import { chromium } from 'playwright';
+import { mkdirSync, writeFileSync } from 'node:fs';
+const base=process.env.SITE_TEST_URL||'http://localhost:4190';
+const out='work/v2';mkdirSync(`${out}/screens`,{recursive:true});
+const checks=[],errors=[],shots=[],measurements=[];
+const browser=await chromium.launch({executablePath:'/usr/bin/chromium',headless:true,args:['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+const context=await browser.newContext({viewport:{width:1440,height:900},reducedMotion:'no-preference'});
+const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
+function check(name,pass,detail){checks.push({name,pass:!!pass,...(detail===undefined?{}:{detail})});if(!pass)process.exitCode=1;}
+async function shot(name){if(process.env.CV_QA_CAPTURE==='0')return;await page.screenshot({path:`${out}/screens/${name}.png`});shots.push(`${name}.png`);}
+async function seek(id,p=0){await page.evaluate(({id,p})=>{const el=document.getElementById(id);scrollTo({top:el.offsetTop+Math.max(0,el.offsetHeight-innerHeight)*p,behavior:'instant'})},{id,p});await page.waitForTimeout(1000);}
+try{
+ await page.goto(`${base}/?intro=skip`);await page.evaluate(()=>document.fonts.ready);await page.waitForSelector('[data-render-ready="true"]',{timeout:15000});await page.waitForTimeout(1200);
+ check('Ten sections retain their approved order',await page.locator('[data-section]').evaluateAll(els=>els.map(el=>el.dataset.section).join(',')==='01,02,03,04,05,06,07,08,09,10'));
+ check('All internal anchors resolve',await page.locator('a[href^="#"]').evaluateAll(els=>els.every(el=>document.getElementById(el.hash.slice(1)))));
+ check('Hero contains no call-to-action buttons',await page.locator('#home .cv-button').count()===0);
+ check('Optional 3D scene is a separate requested production chunk',await page.evaluate(()=>performance.getEntriesByType('resource').some(r=>/HeroInstallation-.*\.js/.test(r.name))));
+ await shot('desktop-01-hero');
+ for(const id of ['industry','problems','causes','approach','outcomes','implementation']){
+  for(const [name,p] of [['initial',.02],['middle',.5],['final',.99]]){await seek(id,p);await shot(`desktop-${id}-${name}`);measurements.push(await page.locator(`#${id}`).evaluate(el=>({id:el.id,engine:el.dataset.motionEngine,progress:el.style.getPropertyValue('--cv-scene-progress')})));}
+ }
+ await seek('causes',.18);const first=await page.locator('.cv-cause-scene.is-active h3').innerText();await seek('causes',.79);const last=await page.locator('.cv-cause-scene.is-active h3').innerText();await seek('causes',.18);
+ check('Scroll advances and reverses the causal surface',first!==last&&first===await page.locator('.cv-cause-scene.is-active h3').innerText(),{first,last});
+ await seek('approach',.05);const before=await page.locator('#approach .cv-method-stage').getAttribute('data-state');await seek('approach',.96);const after=await page.locator('#approach .cv-method-stage').getAttribute('data-state');await seek('approach',.05);
+ check('Method scroll reverses after the ending',before===await page.locator('#approach .cv-method-stage').getAttribute('data-state')&&before!==after,{before,after});
+ await seek('workflows');await shot('desktop-workflows-default');await page.locator('.cv-workflow-trigger').first().focus();await shot('desktop-workflows-focus');await page.locator('.cv-workflow-trigger').first().click();await page.waitForTimeout(900);await shot('desktop-workflows-expanded');await page.waitForTimeout(4200);await shot('desktop-workflows-completed');
+ await seek('value');await shot('desktop-calculator');check('Calculator default additional bookings',await page.locator('[data-result="additional"]').innerText()==='2');check('Calculator default gross monthly value',await page.locator('[data-result="monthly"]').innerText()==='£24,000');
+ await page.locator('#cv-booking-rate').fill('99');await page.waitForTimeout(450);check('Calculator caps improvement at 100% total',await page.locator('[data-result="additional"]').innerText()==='0.4');
+ await page.locator('#cv-enquiries').fill('0');await page.waitForTimeout(450);check('Zero enquiries means zero additional bookings',await page.locator('[data-result="additional"]').innerText()==='0');
+ await page.locator('#cv-enquiries').fill('40');await page.locator('#cv-booking-rate').fill('15');await page.locator('#cv-improvement').fill('100');await page.waitForFunction(()=>document.querySelector('[data-result=additional]')?.textContent==='34');check('Maximum assumption and native range agree',await page.locator('#cv-improvement-range').inputValue()==='100'&&await page.locator('[data-result="additional"]').innerText()==='34');
+ await page.locator('#cv-improvement-range').focus();await page.keyboard.press('ArrowLeft');check('Range supports keyboard and updates numeric assumption',await page.locator('#cv-improvement').inputValue()==='99');await page.locator('#cv-improvement').fill('5');
+ await seek('contact');const write=page.getByRole('button',{name:'Write to us'});await write.click();await page.locator('#cv-business').fill('QA Example Cleaning');await page.locator('#cv-name').fill('Preview tester');await page.locator('#cv-email').fill('preview@example.com');await page.locator('#cv-description').fill('Please review our enquiry process.');
+ await page.locator('.cv-contact-form button[type="submit"]').click();check('Preview contact never claims delivery',await page.locator('.cv-form-message').innerText().then(t=>t.includes('Nothing has been sent')));await shot('desktop-contact-preview');
+ const privacy=page.locator('.cv-form-help button');await privacy.click();await page.waitForTimeout(100);check('Privacy uses a real modal',await page.locator('dialog.cv-privacy').evaluate(el=>el.matches(':modal')));await page.keyboard.press('Escape');await page.waitForTimeout(100);check('Privacy Escape restores invoker focus',await privacy.evaluate(el=>document.activeElement===el));
+ await page.getByRole('button',{name:'Close enquiry form'}).click();await page.waitForTimeout(50);check('Closing enquiry returns keyboard focus',await write.evaluate(el=>document.activeElement===el));
+ for(const {width,height} of [{width:768,height:1024},{width:375,height:812}]){
+  await page.setViewportSize({width,height});await page.goto(`${base}/?intro=skip`);await page.evaluate(()=>document.fonts.ready);
+  for(const id of ['home','causes','approach','workflows','outcomes','implementation','value','contact']){await seek(id);check(`${width}x${height}: no horizontal overflow at ${id}`,await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await shot(`${width}-${id}`);}
+ }
+ await page.setViewportSize({width:1440,height:900});await page.emulateMedia({reducedMotion:'reduce'});await page.goto(`${base}/?intro=review`);await page.waitForTimeout(300);check('Reduced motion bypasses intro',await page.locator('.cv-intro').count()===0);check('Reduced motion retains all content',await page.locator('[data-section]').count()===10);check('Reduced motion uses manual scene navigation',await page.locator('#causes').getAttribute('data-motion-engine')==='manual');
+ await page.emulateMedia({reducedMotion:'no-preference'});await page.goto(`${base}/?intro=review`);await page.waitForSelector('.cv-intro');await page.waitForTimeout(500);await shot('intro-attraction');await page.keyboard.press('Escape');check('Escape skips the intro',await page.locator('.cv-intro').count()===0);
+ await page.goto(`${base}/?intro=1`);await page.getByRole('button',{name:'Skip intro'}).click();await page.goto(`${base}/`);check('Returning visitor automatically skips intro',await page.locator('.cv-intro').count()===0);
+ await page.addInitScript(()=>{let mounted=0;window.__introDuration=0;new MutationObserver(()=>{const present=!!document.querySelector('.cv-intro');if(present&&!mounted)mounted=performance.now();else if(!present&&mounted&&!window.__introDuration)window.__introDuration=performance.now()-mounted}).observe(document,{childList:true,subtree:true})});await page.goto(`${base}/?intro=review`);await page.locator('.cv-intro').waitFor({state:'detached',timeout:6000});const introDuration=await page.evaluate(()=>window.__introDuration);check('Automatic visible intro is bounded below 4.75 seconds',introDuration>0&&introDuration<4750,introDuration);
+ await context.close();
+ const fallback=await browser.newContext({viewport:{width:375,height:812}});await fallback.addInitScript(()=>{const get=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(type,...args){return type==='webgl'||type==='webgl2'?null:get.call(this,type,...args)}});const fp=await fallback.newPage();await fp.goto(`${base}/?intro=skip`);await fp.waitForSelector('.cv-installation-static');check('No-WebGL retains the vessel illustration',await fp.locator('#cv-hero-title').isVisible());await fp.screenshot({path:`${out}/screens/mobile-no-webgl.png`});await fallback.close();
+ const broken=await browser.newContext();await broken.route('**/assets/HeroInstallation-*.js',r=>r.abort());const bp=await broken.newPage();await bp.goto(`${base}/?intro=skip`);await bp.waitForSelector('.cv-installation-static');check('Failed optional 3D chunk retains the still illustration',await bp.locator('#cv-hero-title').isVisible());await broken.close();
+ check('No unexpected browser runtime errors',errors.length===0,errors);
+}catch(error){checks.push({name:'Test run completes',pass:false,detail:error.stack});process.exitCode=1;}finally{await browser.close();writeFileSync(`${out}/verification.json`,JSON.stringify({base,checks,errors,shots,measurements},null,2));console.log(JSON.stringify({checks,errors,screenshots:shots.length},null,2));}

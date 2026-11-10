@@ -90,7 +90,7 @@ export function OutcomesSection() {
                 <button
                   type="button"
                   key={outcome.label}
-                  aria-label={`Show outcome ${outcomeIndex + 1}: ${outcome.label}`}
+                  aria-label={`Show outcome 0${outcomeIndex + 1}: ${outcome.label}`}
                   aria-pressed={index === outcomeIndex}
                   onClick={() => setInteractive(outcomeIndex)}
                 ><span>0{outcomeIndex + 1}</span><i aria-hidden="true" /></button>

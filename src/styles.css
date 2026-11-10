@@ -2,14 +2,14 @@
   font-family: "Bespoke Stencil";
   src: url("./assets/BespokeStencil-Medium.woff2") format("woff2");
   font-weight: 500;
-  font-display: block;
+  font-display: swap;
 }
 /* The supplied asset is Medium. Replace with approved 600; never fake the weight. */
 @font-face {
   font-family: "Cabinet Grotesk";
   src: url("./assets/CabinetGrotesk-Medium.woff2") format("woff2");
   font-weight: 500;
-  font-display: block;
+  font-display: swap;
 }
 :root {
   font-family: "Space Grotesk", sans-serif;

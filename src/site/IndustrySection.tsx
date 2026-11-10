@@ -1,7 +1,11 @@
-import type { CSSProperties } from 'react';
+import { useEffect, useLayoutEffect, useRef, type CSSProperties } from 'react';
+import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
+import { gsap } from './animation';
 import { useSceneProgress } from './motion';
 import { clampUnit } from './causal-data';
 import './causes-sections.css';
+
+gsap.registerPlugin(DrawSVGPlugin);
 
 const INDUSTRIES = [
   { name: 'HVAC', x: 13, y: 17, angle: -7, code: 'HV' },
@@ -23,6 +27,14 @@ export function IndustrySection() {
   const { ref, progress, interactive, setInteractive, index } = useSceneProgress(3);
   const selection = interactive === null ? progress : (interactive + 1) / 3;
   const chosen = selection > 0.58;
+  const selectionTrail = useRef<gsap.core.Timeline | null>(null);
+  useLayoutEffect(() => {
+    const context = gsap.context(() => {
+      selectionTrail.current = gsap.timeline({ paused: true }).fromTo('.cv-selection-draw', { drawSVG: '0%' }, { drawSVG: '100%', duration: 1, stagger: 0.35, ease: 'none' });
+    }, ref);
+    return () => { selectionTrail.current = null; context.revert(); };
+  }, [ref]);
+  useEffect(() => { selectionTrail.current?.progress(clampUnit((selection - 0.58) / 0.42)); }, [selection]);
   return (
     <section id="industry" data-section="02" ref={ref} className="cv-section cv-industry" aria-labelledby="cv-industry-title">
       <div className="cv-industry-sticky">
@@ -30,7 +42,7 @@ export function IndustrySection() {
           <div className={`cv-industry-field ${chosen ? 'is-selected' : ''}`} style={{ '--cv-scan': `${10 + selection * 82}%` } as CSSProperties}>
             <div className="cv-field-heading"><span className="cv-kicker">A considered focus</span><span className="cv-field-index">08 industries / 01 focus</span></div>
             <div className="cv-industry-space" aria-label="Industries considered: HVAC, Plumbing, Roofing, Pest Control, Logistics, Memberships, Med Spas, and Commercial Cleaning">
-              <svg className="cv-industry-selection-thread" viewBox="0 0 600 455" preserveAspectRatio="none" aria-hidden="true"><path d="M480 247C550 247 560 315 485 353S410 399 410 455" pathLength="1" style={{ strokeDashoffset: 1 - clampUnit((selection - 0.58) / 0.42) }} /></svg>
+              <svg className="cv-industry-selection-thread" viewBox="0 0 600 455" preserveAspectRatio="none" aria-hidden="true"><path className="cv-selection-draw" d="M480 247C550 247 560 315 485 353S410 399 410 455" /></svg>
               <div className="cv-field-orbit cv-field-orbit-a" aria-hidden="true" /><div className="cv-field-orbit cv-field-orbit-b" aria-hidden="true" />
               <div className="cv-scanner-aperture" aria-hidden="true"><i /><i /><i /><i /></div>
               {INDUSTRIES.map((item, itemIndex) => (
@@ -41,7 +53,7 @@ export function IndustrySection() {
               ))}
             </div>
             <div className="cv-field-foot"><span>Strategic selection</span><span>{chosen ? 'UK commercial cleaning' : 'Explore the fit'}</span></div>
-            <svg className="cv-industry-exit" viewBox="0 0 600 180" preserveAspectRatio="none" aria-hidden="true"><path d="M410 0C410 70 515 54 515 113S470 160 470 180" pathLength="1" style={{ strokeDashoffset: 1 - clampUnit((selection - 0.58) / 0.42) }} /></svg>
+            <svg className="cv-industry-exit" viewBox="0 0 600 180" preserveAspectRatio="none" aria-hidden="true"><path className="cv-selection-draw" d="M410 0C410 70 515 54 515 113S470 160 470 180" /></svg>
           </div>
           <div className="cv-industry-copy">
             <div className="cv-industry-question"><p className="cv-eyebrow">02 / Industry selection</p><h2 id="cv-industry-title" className="cv-title">Why UK commercial <span>cleaning contractors?</span></h2></div>
@@ -53,7 +65,7 @@ export function IndustrySection() {
                 </article>;
               })}
             </div>
-            <div className="cv-industry-controls" role="group" aria-label="Explore the three reasons">{REASONS.map((reason, i) => <button type="button" key={reason.title} aria-label={reason.title} aria-pressed={index === i} onClick={() => setInteractive(i)}>0{i + 1}</button>)}</div>
+            <div className="cv-industry-controls" role="group" aria-label="Explore the three reasons">{REASONS.map((reason, i) => <button type="button" key={reason.title} aria-label={`0${i + 1}: ${reason.title}`} aria-pressed={index === i} onClick={() => setInteractive(i)}>0{i + 1}</button>)}</div>
             <p className="cv-scene-note">A deliberate focus. These properties are not exclusive to cleaning, and other industries may present strong opportunities too.</p>
           </div>
         </div>

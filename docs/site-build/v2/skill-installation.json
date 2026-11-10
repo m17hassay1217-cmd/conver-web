@@ -1,0 +1,30 @@
+[
+  {
+    "skill": "scroll-craft",
+    "source": "scroll-craft/plugins/nateherk-design/skills/scroll-craft",
+    "revision": "75d81f74e83692add18cd7a8a8e078b8a887a579",
+    "files": 25,
+    "script_execution": "none"
+  },
+  {
+    "skill": "frontend-design",
+    "source": "anthropic-skills/skills/frontend-design",
+    "revision": "2c5958ecac7cee2b583967a2c4981d0f4a75c579",
+    "files": 2,
+    "script_execution": "none"
+  },
+  {
+    "skill": "vercel-react-best-practices",
+    "source": "vercel-skills/skills/react-best-practices",
+    "revision": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+    "files": 76,
+    "script_execution": "none"
+  },
+  {
+    "skill": "web-design-guidelines",
+    "source": "vercel-skills/skills/web-design-guidelines",
+    "revision": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+    "files": 1,
+    "script_execution": "none"
+  }
+]

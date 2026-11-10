@@ -1,0 +1,173 @@
+{
+  "checks": [
+    {
+      "name": "Exactly three outcome ripples",
+      "pass": true
+    },
+    {
+      "name": "Outcome 1 adds one cumulative reveal",
+      "pass": true
+    },
+    {
+      "name": "Outcome 2 adds one cumulative reveal",
+      "pass": true
+    },
+    {
+      "name": "Outcome 3 adds one cumulative reveal",
+      "pass": true
+    },
+    {
+      "name": "All three completed outcomes remain readable",
+      "pass": true
+    },
+    {
+      "name": "All three completed rings expanded",
+      "pass": true
+    },
+    {
+      "name": "Outcome proportional hierarchy",
+      "pass": true
+    },
+    {
+      "name": "Stage 1 keeps the same existing workflow DOM",
+      "pass": true
+    },
+    {
+      "name": "Stage 1 retains all five original workflow nodes",
+      "pass": true
+    },
+    {
+      "name": "Stage 2 keeps the same existing workflow DOM",
+      "pass": true
+    },
+    {
+      "name": "Stage 2 retains all five original workflow nodes",
+      "pass": true
+    },
+    {
+      "name": "Stage 2 retains isolated test lane",
+      "pass": true
+    },
+    {
+      "name": "Stage 3 keeps the same existing workflow DOM",
+      "pass": true
+    },
+    {
+      "name": "Stage 3 retains all five original workflow nodes",
+      "pass": true
+    },
+    {
+      "name": "Stage 3 retains isolated test lane",
+      "pass": true
+    },
+    {
+      "name": "Stage 3 retains human approval and fallback",
+      "pass": true
+    },
+    {
+      "name": "Human approval authorizes the example fallback",
+      "pass": true
+    },
+    {
+      "name": "Stage 4 keeps the same existing workflow DOM",
+      "pass": true
+    },
+    {
+      "name": "Stage 4 retains all five original workflow nodes",
+      "pass": true
+    },
+    {
+      "name": "Stage 4 retains isolated test lane",
+      "pass": true
+    },
+    {
+      "name": "Stage 4 retains human approval and fallback",
+      "pass": true
+    },
+    {
+      "name": "Monitor illustration finishes resolved",
+      "pass": true
+    },
+    {
+      "name": "Monitoring control advances to alert",
+      "pass": true
+    },
+    {
+      "name": "Monitoring control advances to inspected",
+      "pass": true
+    },
+    {
+      "name": "Monitoring control advances to resolved",
+      "pass": true
+    },
+    {
+      "name": "Final workflow has five monitored nodes",
+      "pass": true
+    },
+    {
+      "name": "Selected live workflow route is explicit",
+      "pass": true
+    },
+    {
+      "name": "768px static outcome shows all three levels",
+      "pass": true
+    },
+    {
+      "name": "768px mobile diagram remains readable",
+      "pass": true
+    },
+    {
+      "name": "768px no horizontal page overflow",
+      "pass": true
+    },
+    {
+      "name": "768px manual implementation selector works",
+      "pass": true
+    },
+    {
+      "name": "390px static outcome shows all three levels",
+      "pass": true
+    },
+    {
+      "name": "390px mobile diagram remains readable",
+      "pass": true
+    },
+    {
+      "name": "390px no horizontal page overflow",
+      "pass": true
+    },
+    {
+      "name": "390px manual implementation selector works",
+      "pass": true
+    },
+    {
+      "name": "320px static outcome shows all three levels",
+      "pass": true
+    },
+    {
+      "name": "320px mobile diagram remains readable",
+      "pass": true
+    },
+    {
+      "name": "320px no horizontal page overflow",
+      "pass": true
+    },
+    {
+      "name": "320px manual implementation selector works",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion starts at complete monitored state",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion keeps all outcome copy readable",
+      "pass": true
+    },
+    {
+      "name": "No browser runtime errors",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

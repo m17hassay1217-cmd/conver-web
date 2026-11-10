@@ -1,0 +1,30 @@
+[
+  {
+    "skill": "scroll-craft",
+    "revision": "75d81f74e83692add18cd7a8a8e078b8a887a579",
+    "matchedFiles": 25,
+    "changed": [],
+    "missing": []
+  },
+  {
+    "skill": "frontend-design",
+    "revision": "2c5958ecac7cee2b583967a2c4981d0f4a75c579",
+    "matchedFiles": 2,
+    "changed": [],
+    "missing": []
+  },
+  {
+    "skill": "vercel-react-best-practices",
+    "revision": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+    "matchedFiles": 76,
+    "changed": [],
+    "missing": []
+  },
+  {
+    "skill": "web-design-guidelines",
+    "revision": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+    "matchedFiles": 1,
+    "changed": [],
+    "missing": []
+  }
+]

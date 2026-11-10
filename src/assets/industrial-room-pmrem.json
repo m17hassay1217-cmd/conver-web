@@ -1,0 +1,180 @@
+{
+  "levels": [
+    {
+      "size": 256,
+      "faces": [
+        {
+          "offset": 0,
+          "length": 262144
+        },
+        {
+          "offset": 262144,
+          "length": 262144
+        },
+        {
+          "offset": 524288,
+          "length": 262144
+        },
+        {
+          "offset": 786432,
+          "length": 262144
+        },
+        {
+          "offset": 1048576,
+          "length": 262144
+        },
+        {
+          "offset": 1310720,
+          "length": 262144
+        }
+      ]
+    },
+    {
+      "size": 128,
+      "faces": [
+        {
+          "offset": 1572864,
+          "length": 65536
+        },
+        {
+          "offset": 1638400,
+          "length": 65536
+        },
+        {
+          "offset": 1703936,
+          "length": 65536
+        },
+        {
+          "offset": 1769472,
+          "length": 65536
+        },
+        {
+          "offset": 1835008,
+          "length": 65536
+        },
+        {
+          "offset": 1900544,
+          "length": 65536
+        }
+      ]
+    },
+    {
+      "size": 64,
+      "faces": [
+        {
+          "offset": 1966080,
+          "length": 16384
+        },
+        {
+          "offset": 1982464,
+          "length": 16384
+        },
+        {
+          "offset": 1998848,
+          "length": 16384
+        },
+        {
+          "offset": 2015232,
+          "length": 16384
+        },
+        {
+          "offset": 2031616,
+          "length": 16384
+        },
+        {
+          "offset": 2048000,
+          "length": 16384
+        }
+      ]
+    },
+    {
+      "size": 32,
+      "faces": [
+        {
+          "offset": 2064384,
+          "length": 4096
+        },
+        {
+          "offset": 2068480,
+          "length": 4096
+        },
+        {
+          "offset": 2072576,
+          "length": 4096
+        },
+        {
+          "offset": 2076672,
+          "length": 4096
+        },
+        {
+          "offset": 2080768,
+          "length": 4096
+        },
+        {
+          "offset": 2084864,
+          "length": 4096
+        }
+      ]
+    },
+    {
+      "size": 16,
+      "faces": [
+        {
+          "offset": 2088960,
+          "length": 1024
+        },
+        {
+          "offset": 2089984,
+          "length": 1024
+        },
+        {
+          "offset": 2091008,
+          "length": 1024
+        },
+        {
+          "offset": 2092032,
+          "length": 1024
+        },
+        {
+          "offset": 2093056,
+          "length": 1024
+        },
+        {
+          "offset": 2094080,
+          "length": 1024
+        }
+      ]
+    },
+    {
+      "size": 8,
+      "faces": [
+        {
+          "offset": 2095104,
+          "length": 256
+        },
+        {
+          "offset": 2095360,
+          "length": 256
+        },
+        {
+          "offset": 2095616,
+          "length": 256
+        },
+        {
+          "offset": 2095872,
+          "length": 256
+        },
+        {
+          "offset": 2096128,
+          "length": 256
+        },
+        {
+          "offset": 2096384,
+          "length": 256
+        }
+      ]
+    }
+  ],
+  "nonzero": true,
+  "source": "Three.js 0.187 RoomEnvironment, PMREM sigma0.04. Six cubemap faces with all six prefiltered roughness levels, RGBA half-float; generated locally."
+}

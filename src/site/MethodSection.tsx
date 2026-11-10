@@ -1,7 +1,12 @@
 import { Arrow } from '../components/Arrow';
-import { useEffect, useState, type CSSProperties } from 'react';
-import { useSceneProgress } from './motion';
+import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from 'react';
+import { gsap } from 'gsap';
+import { SplitText } from 'gsap/SplitText';
+import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
+import { useReducedMotion, useSceneProgress } from './motion';
 import './method-workflows.css';
+
+gsap.registerPlugin(SplitText, DrawSVGPlugin);
 
 const methods = [
   { name: 'Diagnose', detail: 'We examine how your existing commercial workflow actually operates before deciding which problems deserve intervention.', measure: 'Reconstruct the actual workflow', instrument: 'Optical reconstruction', code: '01 / OBSERVE' },
@@ -12,12 +17,29 @@ const methods = [
 
 const phases = ['diagnose', 'prioritize', 'engineer', 'verify', 'synthesis'];
 
-function PrecisionInstrument({ phase }: { phase: number }) {
+function PrecisionInstrument({ phase, reduced }: { phase: number; reduced: boolean }) {
+  const instrumentRef = useRef<HTMLDivElement>(null);
   const ticks = Array.from({ length: 60 }, (_, i) => i * 6);
-  return <div className="cv-instrument" data-phase={phases[phase]} aria-hidden="true">
+  useLayoutEffect(() => {
+    if (reduced) return;
+    const context = gsap.context(() => {
+      if (phase === 0) gsap.fromTo('.cv-optic-signal', { x: (i) => (i - 5) * 6, y: (i) => (i - 4) * 4, opacity: .15 }, { x: 0, y: 0, opacity: 1, duration: 1, stagger: .023, ease: 'power3.out' });
+      if (phase === 1) {
+        gsap.fromTo('.cv-focus-candidates > circle', { opacity: 1 }, { opacity: .23, duration: .9 });
+        gsap.fromTo('.cv-selected-point', { scale: 1.2, opacity: .1, svgOrigin: '340 300' }, { scale: 1, opacity: 1, duration: .8, ease: 'power3.out' });
+      }
+      if (phase === 3) {
+        gsap.fromTo('.cv-calibration-wave', { scale: .25, opacity: .7, svgOrigin: '340 300' }, { scale: 1.25, opacity: 0, duration: 1.5, repeat: 1, ease: 'power2.out' });
+        gsap.fromTo('.cv-instrument-calibration > path', { drawSVG: '0%' }, { drawSVG: '100%', duration: 1.1, stagger: .1, ease: 'power2.inOut' });
+      }
+    }, instrumentRef);
+    return () => context.revert();
+  }, [phase, reduced]);
+  return <div ref={instrumentRef} className="cv-instrument" data-phase={phases[phase]} aria-hidden="true">
     <svg viewBox="0 0 680 600" className="cv-instrument-svg">
       <defs>
-        <linearGradient id="cv-metal" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#506570"/><stop offset=".35" stopColor="#152C37"/><stop offset=".65" stopColor="#435761"/><stop offset="1" stopColor="#0B1D27"/></linearGradient>
+        <linearGradient id="cv-metal" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#8C9B9E"/><stop offset=".13" stopColor="#425E6A"/><stop offset=".35" stopColor="#122731"/><stop offset=".59" stopColor="#61747B"/><stop offset=".66" stopColor="#304A57"/><stop offset="1" stopColor="#0B1D27"/></linearGradient>
+        <filter id="cv-metal-depth" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="11" floodColor="#02090E" floodOpacity=".68"/></filter>
         <radialGradient id="cv-lens"><stop stopColor="#86C8D8" stopOpacity=".16"/><stop offset=".7" stopColor="#2B7488" stopOpacity=".04"/><stop offset="1" stopColor="#84C7D8" stopOpacity=".27"/></radialGradient>
         <linearGradient id="cv-glass" x1="0" y1="1" x2="1" y2="0"><stop stopColor="#74B3C6" stopOpacity=".02"/><stop offset=".5" stopColor="#B6D5DB" stopOpacity=".2"/><stop offset=".6" stopColor="#74B3C6" stopOpacity=".03"/><stop offset="1" stopColor="#74B3C6" stopOpacity=".13"/></linearGradient>
       </defs>
@@ -25,7 +47,7 @@ function PrecisionInstrument({ phase }: { phase: number }) {
         <path d="M52 306H628M340 40V558"/><circle cx="340" cy="300" r="248" strokeDasharray="2 10"/><path d="M76 172V100h72M532 100h72v72M604 428v72h-72M148 500H76v-72"/>
         <path d="M248 550h184M340 540v20M250 546v8M430 546v8"/>
       </g>
-      <g className="cv-instrument-body">
+      <g className="cv-instrument-body" filter="url(#cv-metal-depth)">
         <g className="cv-lens-back"><ellipse cx="340" cy="300" rx="218" ry="202" fill="#091B24" stroke="#405662" strokeWidth="3"/><ellipse cx="340" cy="300" rx="204" ry="190" fill="none" stroke="#1D3540" strokeWidth="12"/></g>
         <g className="cv-instrument-modules">
           {[0, 1, 2, 3].map((part) => <g key={part} className={`cv-instrument-module cv-module-${part}`}>
@@ -75,6 +97,8 @@ function PrecisionInstrument({ phase }: { phase: number }) {
 
 export function MethodSection() {
   const { ref, index, interactive, setInteractive } = useSceneProgress(5);
+  const reduced = useReducedMotion();
+  const copyRef = useRef<HTMLDivElement>(null);
   const [entered, setEntered] = useState(false);
   const active = Math.min(index, 4);
   useEffect(() => {
@@ -85,6 +109,43 @@ export function MethodSection() {
     return () => observer.disconnect();
   }, [ref]);
 
+  useLayoutEffect(() => {
+    if (!entered || reduced || !ref.current) return;
+    const context = gsap.context(() => {
+      gsap.timeline()
+        .fromTo('.cv-entry-line', { drawSVG: '0%' }, { drawSVG: '100%', duration: .65, ease: 'power2.inOut' })
+        .fromTo('.cv-method-brand', { x: 24, opacity: 0, filter: 'blur(5px)' }, { x: 0, opacity: 1, filter: 'blur(0px)', duration: .65, ease: 'power3.out' }, .2);
+    }, ref);
+    return () => context.revert();
+  }, [entered, reduced, ref]);
+
+  useLayoutEffect(() => {
+    const copy = copyRef.current;
+    if (!copy || !entered || active === 4 || reduced) return;
+    let cancelled = false;
+    let split: SplitText | undefined;
+    const context = gsap.context(() => {}, copy);
+    // Split after the actual face is ready; autoSplit rebuilds lines on width/font changes.
+    void document.fonts.ready.then(() => {
+      if (cancelled) return;
+      context.add(() => {
+        split = SplitText.create(copy.querySelector('.cv-method-detail'), {
+          type: 'lines,words,chars', autoSplit: true, aria: 'auto',
+          onSplit: (self) => {
+            const timeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
+            timeline.fromTo(copy.querySelector('h3'), { x: -24, opacity: .25 }, { x: 0, opacity: 1, duration: .55 }, 0);
+            if (active === 0) timeline.fromTo(self.words, { x: (i) => (i % 3 - 1) * 12, y: (i) => (i % 2 ? 4 : -4), opacity: .12 }, { x: 0, y: 0, opacity: 1, duration: .65, stagger: .013 }, .08);
+            if (active === 1) timeline.fromTo(self.lines, { clipPath: 'inset(0 100% 0 0)', x: -8 }, { clipPath: 'inset(0 0% 0 0)', x: 0, duration: .75, stagger: .08 }, .05);
+            if (active === 2) timeline.fromTo(self.words, { x: (i) => i % 2 ? -8 : 8, y: 9, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: .55, stagger: .018 }, .08);
+            if (active === 3) timeline.fromTo(self.chars, { filter: 'blur(3px)', opacity: .15 }, { filter: 'blur(0px)', opacity: 1, duration: .55, stagger: .003 }, .08);
+            return timeline;
+          },
+        });
+      });
+    });
+    return () => { cancelled = true; context.revert(); split?.revert(); };
+  }, [active, reduced, entered]);
+
   return <section ref={ref} id="approach" className={`cv-section cv-method-section ${entered ? 'is-entered' : ''}`} data-section="05" aria-labelledby="cv-method-heading">
     <div className="cv-method-sticky cv-container">
       <div className="cv-method-entry">
@@ -94,13 +155,13 @@ export function MethodSection() {
       <header className="cv-method-heading"><p className="cv-eyebrow">05 — Why Converdive?</p><h2 id="cv-method-heading" className="cv-title">A method before<br/>a solution.</h2></header>
       <div className="cv-method-stage" data-state={phases[active]}>
         <div className="cv-method-stage-body" aria-hidden={active === 4}>
-          <div className="cv-method-copy" key={active} data-reveal={phases[active]} aria-live="polite">
+          <div ref={copyRef} className="cv-method-copy" key={active} data-reveal={phases[active]} aria-live="polite">
             <p className="cv-method-number">{methods[Math.min(active, 3)].code}</p>
             <h3>{methods[Math.min(active, 3)].name}</h3>
-            <p className="cv-method-detail">{methods[Math.min(active, 3)].detail.split(' ').map((word, i) => <span key={i} style={{ '--word': i } as CSSProperties}>{word} </span>)}</p>
+            <p role="paragraph" className="cv-method-detail">{methods[Math.min(active, 3)].detail}</p>
             <p className="cv-method-intent"><span/> {methods[Math.min(active, 3)].measure}</p>
           </div>
-          <PrecisionInstrument phase={active}/>
+          <PrecisionInstrument phase={active} reduced={reduced}/>
         </div>
         <div className="cv-method-synthesis" aria-hidden={active !== 4}>
           <span className="cv-synthesis-identity">Converdive<span> / The difference</span></span>

@@ -39,3 +39,9 @@ in `.playwright/cli.config.json` selects the cloud machine's system Chromium.
 
 Never commit dependency folders, browser downloads, caches, credentials, or
 temporary browser output. Do not disable TLS or artifact verification.
+
+V2 adds four targeted project-local skills: `scroll-craft`, `frontend-design`,
+`vercel-react-best-practices`, and `web-design-guidelines`. Their upstream
+revisions and installation evidence are in `docs/site-build/v2/skill-installation.json`.
+The approved Converdive V1/V2 specifications take precedence over generic skill
+recommendations. GSAP owns timeline orchestration; avoid competing property owners.
