@@ -14,15 +14,16 @@ export function HeroV3({backgroundUrl='/brand/neon-swept-st-pauls.png',contactHr
   const el=root.current;if(!el)return;
   const context=gsap.context(()=>{
    const $=gsap.utils.selector(el);
-   gsap.set($('.cv3-heading'),{xPercent:-50,yPercent:-50,x:0,y:0});
-   if(reduced){gsap.set($('.cv3-head-boundary,.cv3-paragraph-boundary'),{x:.3});gsap.set($('.cv3-support,.cv3-cta'),{visibility:'visible'});gsap.set($('.cv3-heading'),{y:()=>-innerHeight*.06,scale:.94});gsap.set($('.cv3-head-soft,.cv3-support-soft,.cv3-contour,.cv3-rim'),{opacity:0});gsap.set($('.cv3-cta-surface'),{opacity:1});el.dataset.stage='complete';return;}
+   gsap.set($('.cv3-copy'),{xPercent:-50,x:0,y:0});
+   if(reduced){gsap.set($('.cv3-head-boundary,.cv3-paragraph-boundary'),{x:.3});gsap.set($('.cv3-support,.cv3-cta'),{visibility:'visible'});gsap.set($('.cv3-copy'),{y:()=>-innerHeight*.06});gsap.set($('.cv3-heading'),{scale:.94});gsap.set($('.cv3-head-soft,.cv3-support-soft,.cv3-contour,.cv3-rim'),{opacity:0});gsap.set($('.cv3-cta-surface'),{opacity:1});el.dataset.stage='complete';return;}
    gsap.set($('.cv3-head-boundary'),{x:-1.4});gsap.set($('.cv3-paragraph-boundary'),{x:-1.4});
    gsap.set($('.cv3-support,.cv3-cta'),{visibility:'hidden'});gsap.set($('.cv3-cta-surface'),{opacity:0,visibility:'hidden'});
    const timeline=gsap.timeline({defaults:{ease:'power2.inOut'},scrollTrigger:{trigger:el,start:'top top',end:'bottom bottom',scrub:.65,invalidateOnRefresh:true,onUpdate:self=>{el.dataset.stage=self.progress<.22?'question':self.progress<.36?'settle':self.progress<.55?'statement':self.progress<.82?'reserved':'cta'}}});
    timeline.to($('.cv3-head-boundary'),{x:.3,duration:.22},0)
     .to($('.cv3-head-soft'),{opacity:0,duration:.13},.1)
     .to($('.cv3-rim'),{opacity:0,duration:.02},.2)
-    .to($('.cv3-heading'),{y:()=>-innerHeight*.06,scale:.94,duration:.14},.22)
+    .to($('.cv3-copy'),{y:()=>-innerHeight*.06,duration:.14},.22)
+    .to($('.cv3-heading'),{scale:.94,duration:.14},.22)
     .to($('.cv3-intersection'),{'--light-x':'118%','--light-y':'5%',duration:.34,ease:'sine.inOut'},.23)
     .set($('.cv3-support'),{visibility:'visible'},.36)
     .to($('.cv3-paragraph-boundary'),{x:.3,duration:.18},.36)
@@ -48,7 +49,7 @@ export function HeroV3({backgroundUrl='/brand/neon-swept-st-pauls.png',contactHr
     <clipPath id={rimMask} clipPathUnits="objectBoundingBox"><path className="cv3-head-boundary" d="M.98 0C.76 .22 1.08 .62 .86 1H.9C1.12 .62 .8 .22 1.02 0Z"/></clipPath>
     <clipPath id={paragraphMask} clipPathUnits="objectBoundingBox"><path className="cv3-paragraph-boundary" d="M-1 0H1Q.94 .5 1 1H-1Z"/></clipPath>
    </defs></svg>
-   <div className="cv3-heading">
+   <div className="cv3-copy"><div className="cv3-heading">
     <h1 id="cv3-title" className="cv3-head-soft">{<QuestionText/>}</h1>
     <div className="cv3-head-sharp" aria-hidden="true" style={{clipPath:`url(#${headlineMask})`}}>{<QuestionText/>}</div>
     <div className="cv3-rim" aria-hidden="true" style={{clipPath:`url(#${rimMask})`}}>{<QuestionText/>}</div>
@@ -57,7 +58,7 @@ export function HeroV3({backgroundUrl='/brand/neon-swept-st-pauls.png',contactHr
    <div className="cv3-support">
     <p className="cv3-support-soft">{statement}</p>
     <p className="cv3-support-sharp" aria-hidden="true" style={{clipPath:`url(#${paragraphMask})`}}>{statement}</p>
-   </div>
+   </div></div>
    <div className="cv3-installation-space" aria-hidden="true" data-reserved="installation"/>
    <div className="cv3-cta">
     <svg className="cv3-contour" viewBox="0 0 250 56" aria-hidden="true"><rect x="1" y="1" width="248" height="54" rx="27" pathLength="600"/></svg>
