@@ -1,6 +1,10 @@
 {
-  "background": "Not available as a file; these checks do not verify image fidelity.",
+  "background": "Original supplied PNG; decoded dimensions1672×941. See asset checksum in V3 report.",
   "checks": [
+    {
+      "name": "1440: original background loaded",
+      "pass": true
+    },
     {
       "name": "1440: isolated hero",
       "pass": true
@@ -151,6 +155,10 @@
       "pass": true
     },
     {
+      "name": "768: original background loaded",
+      "pass": true
+    },
+    {
       "name": "768: isolated hero",
       "pass": true
     },
@@ -297,6 +305,10 @@
     },
     {
       "name": "768: CTA not prematurely focusable",
+      "pass": true
+    },
+    {
+      "name": "375: original background loaded",
       "pass": true
     },
     {

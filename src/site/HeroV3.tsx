@@ -27,7 +27,8 @@ export function HeroV3({backgroundUrl='/brand/neon-swept-st-pauls.png',contactHr
     .set($('.cv3-support'),{visibility:'visible'},.36)
     .to($('.cv3-paragraph-boundary'),{x:.3,duration:.18},.36)
     .to($('.cv3-support-soft'),{opacity:0,duration:.12},.42)
-    .to($('.cv3-image'),{yPercent:3,duration:1,ease:'none'},0)
+    .to($('.cv3-illumination'),{'--field-x':'95%','--field-y':'13%',duration:.4,ease:'sine.inOut'},.18)
+    .to($('.cv3-image'),{yPercent:2.5,duration:1,ease:'none'},0)
     .set($('.cv3-cta'),{visibility:'visible'},.82)
     .fromTo($('.cv3-contour rect'),{strokeDasharray:600,strokeDashoffset:600},{strokeDashoffset:0,duration:.15,ease:'power2.out'},.82)
     .set($('.cv3-cta-surface'),{visibility:'visible'},.89)
@@ -40,6 +41,7 @@ export function HeroV3({backgroundUrl='/brand/neon-swept-st-pauls.png',contactHr
  return <main ref={root} className={`cv3-hero ${reduced?'is-reduced':''}`} id="home" aria-labelledby="cv3-title">
   <div className="cv3-frame">
    <img className="cv3-image" src={backgroundUrl} alt="" fetchPriority="high"/>
+   <img className="cv3-image cv3-illumination" src={backgroundUrl} alt="" aria-hidden="true"/>
    <div className="cv3-scrim" aria-hidden="true"/>
    <svg className="cv3-mask-definitions" aria-hidden="true"><defs>
     <clipPath id={headlineMask} clipPathUnits="objectBoundingBox"><path className="cv3-head-boundary" d="M-1 0H1C.78 .22 1.1 .62 .88 1H-1Z"/></clipPath>

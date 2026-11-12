@@ -1,15 +1,29 @@
-# V3 hero — awaiting original background file
+# Converdive V3 — isolated hero review
 
-The supplied inline chat reference is visually available to the agent, but no image file or downloadable attachment handle is available in this workspace. Do not regenerate it or use a substitute. The V2 published site remains unchanged until the original image can be integrated and visually verified.
+The V3 preview is `?hero=v3`. The existing ten-section V2 website remains the default route. This hero has no navbar, vessels, balls, placeholder diagram or extra sections. The CTA opens the existing contact route.
 
-Prepared `src/site/HeroV3.tsx` and `hero-v3.css`. The isolated review entry is `?hero=v3`; the existing website remains the default entry. This route contains no navbar, vessels, ball simulation or additional sections. The CTA links to the existing contact route rather than an empty anchor.
+## Original asset
 
-Place the exact original image at `public/brand/neon-swept-st-pauls.png`, or pass its actual URL through the `backgroundUrl` prop. Do not change its architecture or grading. The expected file is intentionally absent rather than filled with a placeholder. The route is not ready for publication while this file is missing.
+The image was extracted from the supplied RAR using libarchive, without executing archive content. `public/brand/neon-swept-st-pauls.png` is byte-for-byte identical to the extracted PNG: SHA-256 `2f08cb05332f61fde3098649872e05c1f5998ef89cfa17891e49cf0e51afbc9b`, dimensions 1672 × 941. No regeneration, recoloring, resizing or replacement was performed. Responsive cover cropping keeps St Paul’s visible on phones. Separate CSS layers provide a local reading scrim, a faint masked luminance pass using the same image, and 2.65% vertical travel. Reduced motion removes the movement.
 
-Motion Design skill guidance was read and applied: premium motion without overshoot, question-first staging, restrained secondary illumination, reversible choreography and reduced motion. The user's specific effects take precedence over generic entrance patterns. SVG curved clipping boundaries progressively replace diffuse text with crisp real HTML copies; a clipped, moving chromatic intersection colors only affected glyph regions. Supporting text resolves separately. The CTA contour traces before the surface resolves; hover lifts2px and moves the SVG arrow4px in220ms. No new animation dependency was introduced.
+## Implementation
 
-The timeline is scroll-linked across240svh on desktop and205svh on phones, with0.65 smoothing. Progress0–0.22 reveals the question;0.22–0.36 settles it upward6vh;0.36–0.54 resolves the statement;0.54–0.82 reserves installation space;0.82–1 assembles the CTA. The future installation must connect to this reserved interval before the CTA is integrated into its final sequence. Reduced motion presents the completed composition without sticky scroll distance.
+`src/site/HeroV3.tsx` and `hero-v3.css` contain the isolated composition. The exact question and supporting statement remain HTML. Space Grotesk 600 uses an existing installed font file under a V3-only family name, preserving V2 font matching.
 
-Typography uses the already installed Space Grotesk600 font asset under a V3-only family name, keeping V2 font matching unchanged. The headline is constrained to three lines, keeping enquiry-to-booking together. Phone sizing is reduced to fit rather than allowing overflow. Desktop centering is based on the supplied1440×900 coordinates. Image positioning, tonal contrast and light alignment require final inspection with the actual asset.
+The repository Motion Design skill supplied premium pacing, restrained secondary motion, no overshoot, keyboard feedback and motion reduction. The user’s named effects override generic entrance patterns. GSAP ScrollTrigger drives one reversible timeline; CSS owns the button hover.
 
-Build/typecheck passed. `tests/site-hero-v3.mjs` verified50 layout and motion checks at1440×900,768×1024 and375×812: reversal, text separation, maximum line count, no horizontal overflow, CTA visibility, absence of navigation/3D and reduced motion. See `layout-qa.json`. These checks do **not** establish background fidelity, final contrast or aesthetic approval. Local diagnostic screenshots are explicitly labelled “layout-only-no-background” and are not final preview images.
+- Optical Clarity Sweep Reveal: diffuse HTML beneath a sharp duplicate with a curved SVG clipping boundary and a narrow illuminated rim.
+- Chromatic Intersection Mask: a masked, text-clipped coral/cyan/jade layer intersects only selected glyph regions. Its colors follow the source image’s lighting family; the whole title is never permanently rainbow-colored.
+- Secondary Clarity Transmission: a separate curved boundary resolves the paragraph without sliding its words upward.
+- Luminous Contour Assembly: SVG contour tracing precedes the resolved CTA surface.
+- Magnetic Micro-Lift: 2px lift, 4px SVG-arrow travel and stronger border illumination over 220ms.
+
+Desktop scroll distance is 240svh; phone distance is 205svh, with 0.65 smoothing. Progress 0–0.22 resolves the question, 0.22–0.36 raises it by 6vh (54px at 900px), 0.36–0.54 resolves the statement, 0.54–0.82 reserves the future installation, and 0.82–1 assembles the CTA. The headline’s first reveal is intentionally scroll-linked. Reduced motion presents a crisp final composition without pinned distance. Fast/reverse scrolling remains supported.
+
+The future ball-transfer installation is not implemented here. Its integration must use the reserved interval and complete before the final CTA beat. Background URL and CTA destination are component props. The original V3 brief is retained in `hero-brief.md`.
+
+## Verification
+
+Build/typecheck passed. Playwright checks at 1440 × 900, 768 × 1024 and 375 × 812 verify the original image loads, three-line heading limit, text separation, no horizontal overflow, reverse scrolling, CTA visibility, reduced motion and absence of navigation/canvas. See `layout-qa.json`.
+
+The review gallery supplies actual browser captures of arrival, partial clarity, chromatic interaction, supporting statement, reserved installation, contour assembly, completed composition, hover and focus at all three sizes. Review images are JPEG-compressed browser screenshots; the deployed background PNG remains unchanged. Background coverage and measured arrow movement are recorded in `visual-checks.json`. These are Chromium/emulated-viewport results; physical Safari/iOS behavior has not been verified. The screenshot gallery and source bundle are published under `/review/v3/`.
