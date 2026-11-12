@@ -1,0 +1,462 @@
+{
+  "background": "Not available as a file; these checks do not verify image fidelity.",
+  "checks": [
+    {
+      "name": "1440: isolated hero",
+      "pass": true
+    },
+    {
+      "name": "1440 progress 0: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1440: CTA not prematurely focusable",
+      "pass": true
+    },
+    {
+      "name": "1440 progress 0.2: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1440 progress 0.5: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1440 progress 0.5: text separation",
+      "pass": true,
+      "detail": {
+        "h": {
+          "top": 141.97265625,
+          "bottom": 369.99609375,
+          "height": 228.0234375
+        },
+        "s": {
+          "top": 391.5,
+          "bottom": 447.65625
+        },
+        "c": {
+          "top": 766.984375,
+          "bottom": 822.984375
+        },
+        "lines": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1440 progress 0.7: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1440 progress 0.7: text separation",
+      "pass": true,
+      "detail": {
+        "h": {
+          "top": 141.97265625,
+          "bottom": 369.99609375,
+          "height": 228.0234375
+        },
+        "s": {
+          "top": 391.5,
+          "bottom": 447.65625
+        },
+        "c": {
+          "top": 766.984375,
+          "bottom": 822.984375
+        },
+        "lines": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1440 progress 1: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1440 progress 1: text separation",
+      "pass": true,
+      "detail": {
+        "h": {
+          "top": 141.97265625,
+          "bottom": 369.99609375,
+          "height": 228.0234375
+        },
+        "s": {
+          "top": 391.5,
+          "bottom": 447.65625
+        },
+        "c": {
+          "top": 766.984375,
+          "bottom": 822.984375
+        },
+        "lines": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1440: CTA visible",
+      "pass": true
+    },
+    {
+      "name": "1440: maximum three headline lines",
+      "pass": true,
+      "detail": {
+        "h": {
+          "top": 141.97265625,
+          "bottom": 369.99609375,
+          "height": 228.0234375
+        },
+        "s": {
+          "top": 391.5,
+          "bottom": 447.65625
+        },
+        "c": {
+          "top": 766.984375,
+          "bottom": 822.984375
+        },
+        "lines": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1440 progress 0.5: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1440 progress 0.5: text separation",
+      "pass": true,
+      "detail": {
+        "h": {
+          "top": 141.97265625,
+          "bottom": 369.99609375,
+          "height": 228.0234375
+        },
+        "s": {
+          "top": 391.5,
+          "bottom": 447.65625
+        },
+        "c": {
+          "top": 766.984375,
+          "bottom": 822.984375
+        },
+        "lines": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1440 progress 0: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1440: CTA not prematurely focusable",
+      "pass": true
+    },
+    {
+      "name": "768: isolated hero",
+      "pass": true
+    },
+    {
+      "name": "768 progress 0: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "768: CTA not prematurely focusable",
+      "pass": true
+    },
+    {
+      "name": "768 progress 0.2: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "768 progress 0.5: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "768 progress 0.5: text separation",
+      "pass": true,
+      "detail": {
+        "h": {
+          "top": 221.2257843017578,
+          "bottom": 361.30047607421875,
+          "height": 140.07469177246094
+        },
+        "s": {
+          "top": 445.4375,
+          "bottom": 499.4375
+        },
+        "c": {
+          "top": 876.515625,
+          "bottom": 932.515625
+        },
+        "lines": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "768 progress 0.7: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "768 progress 0.7: text separation",
+      "pass": true,
+      "detail": {
+        "h": {
+          "top": 221.2257843017578,
+          "bottom": 361.30047607421875,
+          "height": 140.07469177246094
+        },
+        "s": {
+          "top": 445.4375,
+          "bottom": 499.4375
+        },
+        "c": {
+          "top": 876.515625,
+          "bottom": 932.515625
+        },
+        "lines": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "768 progress 1: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "768 progress 1: text separation",
+      "pass": true,
+      "detail": {
+        "h": {
+          "top": 220.8195343017578,
+          "bottom": 360.89422607421875,
+          "height": 140.07469177246094
+        },
+        "s": {
+          "top": 445.03125,
+          "bottom": 499.03125
+        },
+        "c": {
+          "top": 876.109375,
+          "bottom": 932.109375
+        },
+        "lines": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "768: CTA visible",
+      "pass": true
+    },
+    {
+      "name": "768: maximum three headline lines",
+      "pass": true,
+      "detail": {
+        "h": {
+          "top": 220.8195343017578,
+          "bottom": 360.89422607421875,
+          "height": 140.07469177246094
+        },
+        "s": {
+          "top": 445.03125,
+          "bottom": 499.03125
+        },
+        "c": {
+          "top": 876.109375,
+          "bottom": 932.109375
+        },
+        "lines": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "768 progress 0.5: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "768 progress 0.5: text separation",
+      "pass": true,
+      "detail": {
+        "h": {
+          "top": 221.2257843017578,
+          "bottom": 361.30047607421875,
+          "height": 140.07469177246094
+        },
+        "s": {
+          "top": 445.4375,
+          "bottom": 499.4375
+        },
+        "c": {
+          "top": 876.515625,
+          "bottom": 932.515625
+        },
+        "lines": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "768 progress 0: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "768: CTA not prematurely focusable",
+      "pass": true
+    },
+    {
+      "name": "375: isolated hero",
+      "pass": true
+    },
+    {
+      "name": "375 progress 0: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "375: CTA not prematurely focusable",
+      "pass": true
+    },
+    {
+      "name": "375 progress 0.2: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "375 progress 0.5: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "375 progress 0.5: text separation",
+      "pass": true,
+      "detail": {
+        "h": {
+          "top": 167.15577697753906,
+          "bottom": 255.06045532226562,
+          "height": 87.90467834472656
+        },
+        "s": {
+          "top": 324.796875,
+          "bottom": 432.796875
+        },
+        "c": {
+          "top": 686.546875,
+          "bottom": 742.546875
+        },
+        "lines": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "375 progress 0.7: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "375 progress 0.7: text separation",
+      "pass": true,
+      "detail": {
+        "h": {
+          "top": 167.15577697753906,
+          "bottom": 255.06045532226562,
+          "height": 87.90467834472656
+        },
+        "s": {
+          "top": 324.796875,
+          "bottom": 432.796875
+        },
+        "c": {
+          "top": 686.546875,
+          "bottom": 742.546875
+        },
+        "lines": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "375 progress 1: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "375 progress 1: text separation",
+      "pass": true,
+      "detail": {
+        "h": {
+          "top": 166.74952697753906,
+          "bottom": 254.65420532226562,
+          "height": 87.90467834472656
+        },
+        "s": {
+          "top": 324.390625,
+          "bottom": 432.390625
+        },
+        "c": {
+          "top": 686.140625,
+          "bottom": 742.140625
+        },
+        "lines": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "375: CTA visible",
+      "pass": true
+    },
+    {
+      "name": "375: maximum three headline lines",
+      "pass": true,
+      "detail": {
+        "h": {
+          "top": 166.74952697753906,
+          "bottom": 254.65420532226562,
+          "height": 87.90467834472656
+        },
+        "s": {
+          "top": 324.390625,
+          "bottom": 432.390625
+        },
+        "c": {
+          "top": 686.140625,
+          "bottom": 742.140625
+        },
+        "lines": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "375 progress 0.5: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "375 progress 0.5: text separation",
+      "pass": true,
+      "detail": {
+        "h": {
+          "top": 167.15577697753906,
+          "bottom": 255.06045532226562,
+          "height": 87.90467834472656
+        },
+        "s": {
+          "top": 324.796875,
+          "bottom": 432.796875
+        },
+        "c": {
+          "top": 686.546875,
+          "bottom": 742.546875
+        },
+        "lines": 3,
+        "overflow": false
+      }
+    },
+    {
+      "name": "375 progress 0: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "375: CTA not prematurely focusable",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion shows final content without pinned distance",
+      "pass": true
+    },
+    {
+      "name": "No runtime errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}
