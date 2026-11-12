@@ -45,3 +45,8 @@ V2 adds four targeted project-local skills: `scroll-craft`, `frontend-design`,
 revisions and installation evidence are in `docs/site-build/v2/skill-installation.json`.
 The approved Converdive V1/V2 specifications take precedence over generic skill
 recommendations. GSAP owns timeline orchestration; avoid competing property owners.
+
+The Owl-Listener designer-skills design-practice suite adds 111 Markdown skills
+from nine collections to `.agents/skills/`. Its pinned source and security review
+are recorded in `.agents/designer-skills-source.md`. Choose only skills relevant
+to the current task; the project brief takes precedence over generic advice.
