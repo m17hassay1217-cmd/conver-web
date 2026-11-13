@@ -1,17 +1,18 @@
 @font-face{font-family:"Converdive Hero Sans";src:url("@fontsource/space-grotesk/files/space-grotesk-latin-600-normal.woff2") format("woff2");font-style:normal;font-weight:600;font-display:swap}
+@font-face{font-family:"Converdive Hero Display";src:url("../assets/CabinetGrotesk-Medium.woff2") format("woff2");font-style:normal;font-weight:500;font-display:swap}
 .cv3-hero{height:240svh;position:relative;background:#101d1c;color:#f2f2ec;font-family:"Space Grotesk",Arial,sans-serif;isolation:isolate}
 .cv3-frame{position:sticky;top:0;height:100svh;min-height:640px;overflow:hidden}
 .cv3-image{position:absolute;inset:-3% 0 0;width:100%;height:106%;object-fit:cover;object-position:center;z-index:-3}
 .cv3-scrim{position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse 56% 25% at 50% 34%,rgba(5,17,17,.5),transparent 100%);pointer-events:none}
 .cv3-mask-definitions{position:absolute;width:0;height:0;overflow:hidden}
 .cv3-copy{position:absolute;top:16%;left:50%;width:min(1100px,calc(100% - 80px));transform:translateX(-50%);text-align:center}
-.cv3-heading{font-family:"Converdive Hero Sans",sans-serif;position:relative;width:100%;font-size:clamp(54px,6.05vw,90px);font-weight:600;line-height:1.08;letter-spacing:-.025em;transform-origin:center}
+.cv3-heading{font-family:"Converdive Hero Display","Converdive Hero Sans",sans-serif;position:relative;width:100%;font-size:clamp(54px,6.05vw,90px);font-weight:500;line-height:1.06;letter-spacing:-.022em;transform-origin:center}
 .cv3-heading>*{font:inherit;letter-spacing:inherit;line-height:inherit;margin:0;text-wrap:balance}
 .cv3-head-soft{filter:blur(3px);opacity:.5;color:#d2d7d3}
 .cv3-head-sharp,.cv3-intersection,.cv3-rim{position:absolute;inset:0}
 .cv3-head-sharp{color:#f2f2ec}
 .cv3-intersection{--light-x:-30%;--light-y:95%;color:transparent;background:linear-gradient(25deg,#d6a094 10%,#8ec8ce 52%,#a8c0a6 90%);background-clip:text;-webkit-background-clip:text;mask-image:radial-gradient(ellipse 18% 140% at var(--light-x) var(--light-y),black 8%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse 18% 140% at var(--light-x) var(--light-y),black 8%,transparent 80%)}
-.cv3-support{position:relative;margin:46px auto 0;width:min(740px,100%);font-size:clamp(18px,1.3vw,21px);line-height:1.5;text-align:center;color:#d2d7d3;text-shadow:0 1px 5px #07171590;visibility:hidden}
+.cv3-support{position:relative;margin:46px auto 0;width:min(740px,100%);font-size:clamp(18px,1.35vw,21px);line-height:1.5;text-align:center;color:#e7ebe6;text-shadow:0 1px 5px #07171590;visibility:hidden}
 .cv3-support p{font:inherit;margin:0;text-wrap:balance}
 .cv3-support-soft{filter:blur(3px);opacity:.3}
 .cv3-support-sharp{position:absolute;inset:0}
