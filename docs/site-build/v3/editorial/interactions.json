@@ -1,0 +1,8 @@
+{
+  "hover": "matrix(1, 0, 0, 1, 0, -3)",
+  "focus": true,
+  "reverseHidden": true,
+  "forward": true,
+  "isolated": true,
+  "image": true
+}

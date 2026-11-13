@@ -1,0 +1,916 @@
+{
+  "out": [
+    {
+      "w": 1440,
+      "h": 900,
+      "name": "initial",
+      "heading": [
+        99,
+        399.5625
+      ],
+      "paragraph": [
+        449.5625,
+        510.40625
+      ],
+      "cta": [
+        302,
+        542.40625,
+        562,
+        600.40625
+      ],
+      "gap": 50,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1695.1px 954px"
+    },
+    {
+      "w": 1440,
+      "h": 900,
+      "name": "clarity",
+      "heading": [
+        99,
+        399.5625
+      ],
+      "paragraph": [
+        449.5625,
+        510.40625
+      ],
+      "cta": [
+        302,
+        542.40625,
+        562,
+        600.40625
+      ],
+      "gap": 50,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1695.1px 954px"
+    },
+    {
+      "w": 1440,
+      "h": 900,
+      "name": "settled",
+      "heading": [
+        79,
+        379.5625
+      ],
+      "paragraph": [
+        429.5625,
+        490.40625
+      ],
+      "cta": [
+        302,
+        522.40625,
+        562,
+        580.40625
+      ],
+      "gap": 50,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1695.1px 954px"
+    },
+    {
+      "w": 1440,
+      "h": 900,
+      "name": "paragraph",
+      "heading": [
+        79,
+        379.5625
+      ],
+      "paragraph": [
+        429.5625,
+        490.40625
+      ],
+      "cta": [
+        302,
+        522.40625,
+        562,
+        580.40625
+      ],
+      "gap": 50,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1695.1px 954px"
+    },
+    {
+      "w": 1440,
+      "h": 900,
+      "name": "contour",
+      "heading": [
+        79,
+        379.5625
+      ],
+      "paragraph": [
+        429.5625,
+        490.40625
+      ],
+      "cta": [
+        302,
+        522.40625,
+        562,
+        580.40625
+      ],
+      "gap": 50,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1695.1px 954px"
+    },
+    {
+      "w": 1440,
+      "h": 900,
+      "name": "final",
+      "heading": [
+        79,
+        379.5625
+      ],
+      "paragraph": [
+        429.5625,
+        490.40625
+      ],
+      "cta": [
+        302,
+        522.40625,
+        562,
+        580.40625
+      ],
+      "gap": 50,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "visible",
+      "mask": "1695.1px 954px"
+    },
+    {
+      "w": 1440,
+      "h": 900,
+      "name": "reverse",
+      "heading": [
+        99,
+        399.5625
+      ],
+      "paragraph": [
+        449.5625,
+        510.40625
+      ],
+      "cta": [
+        302,
+        542.40625,
+        562,
+        600.40625
+      ],
+      "gap": 50,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1695.1px 954px"
+    },
+    {
+      "w": 1280,
+      "h": 800,
+      "name": "initial",
+      "heading": [
+        88,
+        355.140625
+      ],
+      "paragraph": [
+        405.140625,
+        462.734375
+      ],
+      "cta": [
+        222,
+        494.734375,
+        482,
+        552.734375
+      ],
+      "gap": 50,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1506.75px 848px"
+    },
+    {
+      "w": 1280,
+      "h": 800,
+      "name": "clarity",
+      "heading": [
+        88,
+        355.140625
+      ],
+      "paragraph": [
+        405.140625,
+        462.734375
+      ],
+      "cta": [
+        222,
+        494.734375,
+        482,
+        552.734375
+      ],
+      "gap": 50,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1506.75px 848px"
+    },
+    {
+      "w": 1280,
+      "h": 800,
+      "name": "settled",
+      "heading": [
+        68,
+        335.140625
+      ],
+      "paragraph": [
+        385.140625,
+        442.734375
+      ],
+      "cta": [
+        222,
+        474.734375,
+        482,
+        532.734375
+      ],
+      "gap": 50,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1506.75px 848px"
+    },
+    {
+      "w": 1280,
+      "h": 800,
+      "name": "paragraph",
+      "heading": [
+        68,
+        335.140625
+      ],
+      "paragraph": [
+        385.140625,
+        442.734375
+      ],
+      "cta": [
+        222,
+        474.734375,
+        482,
+        532.734375
+      ],
+      "gap": 50,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1506.75px 848px"
+    },
+    {
+      "w": 1280,
+      "h": 800,
+      "name": "contour",
+      "heading": [
+        68,
+        335.140625
+      ],
+      "paragraph": [
+        385.140625,
+        442.734375
+      ],
+      "cta": [
+        222,
+        474.734375,
+        482,
+        532.734375
+      ],
+      "gap": 50,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1506.75px 848px"
+    },
+    {
+      "w": 1280,
+      "h": 800,
+      "name": "final",
+      "heading": [
+        68,
+        335.140625
+      ],
+      "paragraph": [
+        385.140625,
+        442.734375
+      ],
+      "cta": [
+        222,
+        474.734375,
+        482,
+        532.734375
+      ],
+      "gap": 50,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "visible",
+      "mask": "1506.75px 848px"
+    },
+    {
+      "w": 1280,
+      "h": 800,
+      "name": "reverse",
+      "heading": [
+        88,
+        355.140625
+      ],
+      "paragraph": [
+        405.140625,
+        462.734375
+      ],
+      "cta": [
+        222,
+        494.734375,
+        482,
+        552.734375
+      ],
+      "gap": 50,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1506.75px 848px"
+    },
+    {
+      "w": 768,
+      "h": 1024,
+      "name": "initial",
+      "heading": [
+        163.828125,
+        353.484375
+      ],
+      "paragraph": [
+        403.484375,
+        461.078125
+      ],
+      "cta": [
+        32,
+        493.078125,
+        292,
+        551.078125
+      ],
+      "gap": 50,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1928.64px 1085.44px"
+    },
+    {
+      "w": 768,
+      "h": 1024,
+      "name": "clarity",
+      "heading": [
+        163.828125,
+        353.484375
+      ],
+      "paragraph": [
+        403.484375,
+        461.078125
+      ],
+      "cta": [
+        32,
+        493.078125,
+        292,
+        551.078125
+      ],
+      "gap": 50,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1928.64px 1085.44px"
+    },
+    {
+      "w": 768,
+      "h": 1024,
+      "name": "settled",
+      "heading": [
+        143.828125,
+        333.484375
+      ],
+      "paragraph": [
+        383.484375,
+        441.078125
+      ],
+      "cta": [
+        32,
+        473.078125,
+        292,
+        531.078125
+      ],
+      "gap": 50,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1928.64px 1085.44px"
+    },
+    {
+      "w": 768,
+      "h": 1024,
+      "name": "paragraph",
+      "heading": [
+        143.828125,
+        333.484375
+      ],
+      "paragraph": [
+        383.484375,
+        441.078125
+      ],
+      "cta": [
+        32,
+        473.078125,
+        292,
+        531.078125
+      ],
+      "gap": 50,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1928.64px 1085.44px"
+    },
+    {
+      "w": 768,
+      "h": 1024,
+      "name": "contour",
+      "heading": [
+        143.828125,
+        333.484375
+      ],
+      "paragraph": [
+        383.484375,
+        441.078125
+      ],
+      "cta": [
+        32,
+        473.078125,
+        292,
+        531.078125
+      ],
+      "gap": 50,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1928.64px 1085.44px"
+    },
+    {
+      "w": 768,
+      "h": 1024,
+      "name": "final",
+      "heading": [
+        143.828125,
+        333.484375
+      ],
+      "paragraph": [
+        383.484375,
+        441.078125
+      ],
+      "cta": [
+        32,
+        473.078125,
+        292,
+        531.078125
+      ],
+      "gap": 50,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "visible",
+      "mask": "1928.64px 1085.44px"
+    },
+    {
+      "w": 768,
+      "h": 1024,
+      "name": "reverse",
+      "heading": [
+        163.828125,
+        353.484375
+      ],
+      "paragraph": [
+        403.484375,
+        461.078125
+      ],
+      "cta": [
+        32,
+        493.078125,
+        292,
+        551.078125
+      ],
+      "gap": 50,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1928.64px 1085.44px"
+    },
+    {
+      "w": 390,
+      "h": 844,
+      "name": "initial",
+      "heading": [
+        109.71875,
+        253.25
+      ],
+      "paragraph": [
+        301.25,
+        410
+      ],
+      "cta": [
+        65,
+        440,
+        325,
+        498
+      ],
+      "gap": 48,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1589.6px 894.625px"
+    },
+    {
+      "w": 390,
+      "h": 844,
+      "name": "clarity",
+      "heading": [
+        109.71875,
+        253.25
+      ],
+      "paragraph": [
+        301.25,
+        410
+      ],
+      "cta": [
+        65,
+        440,
+        325,
+        498
+      ],
+      "gap": 48,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1589.6px 894.625px"
+    },
+    {
+      "w": 390,
+      "h": 844,
+      "name": "settled",
+      "heading": [
+        89.71875,
+        233.25
+      ],
+      "paragraph": [
+        281.25,
+        390
+      ],
+      "cta": [
+        65,
+        420,
+        325,
+        478
+      ],
+      "gap": 48,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1589.6px 894.625px"
+    },
+    {
+      "w": 390,
+      "h": 844,
+      "name": "paragraph",
+      "heading": [
+        89.71875,
+        233.25
+      ],
+      "paragraph": [
+        281.25,
+        390
+      ],
+      "cta": [
+        65,
+        420,
+        325,
+        478
+      ],
+      "gap": 48,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1589.6px 894.625px"
+    },
+    {
+      "w": 390,
+      "h": 844,
+      "name": "contour",
+      "heading": [
+        89.71875,
+        233.25
+      ],
+      "paragraph": [
+        281.25,
+        390
+      ],
+      "cta": [
+        65,
+        420,
+        325,
+        478
+      ],
+      "gap": 48,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1589.6px 894.625px"
+    },
+    {
+      "w": 390,
+      "h": 844,
+      "name": "final",
+      "heading": [
+        89.515625,
+        233.046875
+      ],
+      "paragraph": [
+        281.046875,
+        389.796875
+      ],
+      "cta": [
+        65,
+        419.796875,
+        325,
+        477.796875
+      ],
+      "gap": 48,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "visible",
+      "mask": "1589.6px 894.625px"
+    },
+    {
+      "w": 390,
+      "h": 844,
+      "name": "reverse",
+      "heading": [
+        109.71875,
+        253.25
+      ],
+      "paragraph": [
+        301.25,
+        410
+      ],
+      "cta": [
+        65,
+        440,
+        325,
+        498
+      ],
+      "gap": 48,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1589.6px 894.625px"
+    },
+    {
+      "w": 375,
+      "h": 812,
+      "name": "initial",
+      "heading": [
+        105.546875,
+        243.59375
+      ],
+      "paragraph": [
+        291.59375,
+        400.34375
+      ],
+      "cta": [
+        57.5,
+        430.34375,
+        317.5,
+        488.34375
+      ],
+      "gap": 48,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1529.35px 860.719px"
+    },
+    {
+      "w": 375,
+      "h": 812,
+      "name": "clarity",
+      "heading": [
+        105.546875,
+        243.59375
+      ],
+      "paragraph": [
+        291.59375,
+        400.34375
+      ],
+      "cta": [
+        57.5,
+        430.34375,
+        317.5,
+        488.34375
+      ],
+      "gap": 48,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1529.35px 860.719px"
+    },
+    {
+      "w": 375,
+      "h": 812,
+      "name": "settled",
+      "heading": [
+        85.546875,
+        223.59375
+      ],
+      "paragraph": [
+        271.59375,
+        380.34375
+      ],
+      "cta": [
+        57.5,
+        410.34375,
+        317.5,
+        468.34375
+      ],
+      "gap": 48,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1529.35px 860.719px"
+    },
+    {
+      "w": 375,
+      "h": 812,
+      "name": "paragraph",
+      "heading": [
+        85.546875,
+        223.59375
+      ],
+      "paragraph": [
+        271.59375,
+        380.34375
+      ],
+      "cta": [
+        57.5,
+        410.34375,
+        317.5,
+        468.34375
+      ],
+      "gap": 48,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1529.35px 860.719px"
+    },
+    {
+      "w": 375,
+      "h": 812,
+      "name": "contour",
+      "heading": [
+        85.546875,
+        223.59375
+      ],
+      "paragraph": [
+        271.59375,
+        380.34375
+      ],
+      "cta": [
+        57.5,
+        410.34375,
+        317.5,
+        468.34375
+      ],
+      "gap": 48,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1529.35px 860.719px"
+    },
+    {
+      "w": 375,
+      "h": 812,
+      "name": "final",
+      "heading": [
+        85.546875,
+        223.59375
+      ],
+      "paragraph": [
+        271.59375,
+        380.34375
+      ],
+      "cta": [
+        57.5,
+        410.34375,
+        317.5,
+        468.34375
+      ],
+      "gap": 48,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "visible",
+      "mask": "1529.35px 860.719px"
+    },
+    {
+      "w": 375,
+      "h": 812,
+      "name": "reverse",
+      "heading": [
+        105.546875,
+        243.59375
+      ],
+      "paragraph": [
+        291.59375,
+        400.34375
+      ],
+      "cta": [
+        57.5,
+        430.34375,
+        317.5,
+        488.34375
+      ],
+      "gap": 48,
+      "overflow": false,
+      "headOverflow": false,
+      "font": true,
+      "italic": true,
+      "visibility": "hidden",
+      "mask": "1529.35px 860.719px"
+    }
+  ],
+  "errors": [],
+  "reduced": true
+}
