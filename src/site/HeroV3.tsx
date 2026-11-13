@@ -58,12 +58,13 @@ export function HeroV3({backgroundUrl='/brand/neon-swept-st-pauls.png',contactHr
    <div className="cv3-support">
     <p className="cv3-support-soft">{statement}</p>
     <p className="cv3-support-sharp" aria-hidden="true" style={{clipPath:`url(#${paragraphMask})`}}>{statement}</p>
-   </div></div>
-   <div className="cv3-installation-space" aria-hidden="true" data-reserved="installation"/>
+   </div>
    <div className="cv3-cta">
     <svg className="cv3-contour" viewBox="0 0 250 56" aria-hidden="true"><rect x="1" y="1" width="248" height="54" rx="27" pathLength="600"/></svg>
     <a className="cv3-cta-surface" href={contactHref}>Discuss your workflow <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M4 16 16 4M5 4h11v11" fill="none" stroke="currentColor" strokeWidth="1.5"/></svg></a>
    </div>
+   </div>
+   <div className="cv3-installation-space" aria-hidden="true" data-reserved="installation"/>
   </div>
  </main>;
 }
