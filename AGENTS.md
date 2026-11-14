@@ -50,3 +50,12 @@ The Owl-Listener designer-skills design-practice suite adds 111 Markdown skills
 from nine collections to `.agents/skills/`. Its pinned source and security review
 are recorded in `.agents/designer-skills-source.md`. Choose only skills relevant
 to the current task; the project brief takes precedence over generic advice.
+
+Additional reviewed design skills are installed locally: the 13 `threejs-*`
+skills from CloudAI-X, the eight `gsap-*` skills from GreenSock,
+`make-interfaces-feel-better` from Jakub Krehel, and `stageshow` from Benji Taylor.
+Source revisions, file hashes, licenses and review limits are recorded in
+`.agents/reviews/design-skills/`. Taste and Frontend Design were already present
+and their existing snapshots were retained. Stageshow's optional playground has
+its own package and lockfile; installing a skill does not install its runtime
+dependencies. Follow the review's local-tool precautions before running helpers.
